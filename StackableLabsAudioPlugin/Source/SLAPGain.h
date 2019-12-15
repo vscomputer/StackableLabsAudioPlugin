@@ -9,3 +9,12 @@
 */
 
 #pragma once
+
+class SLAPGain
+{
+public:
+	SLAPGain();
+	~SLAPGain();
+	void process(float* inAudio, float inGain, float* outAudio, int numSamplesToRender);
+private:
+};

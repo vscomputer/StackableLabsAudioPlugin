@@ -9,3 +9,17 @@
 */
 
 #include "SLAPGain.h"
+
+SLAPGain::SLAPGain()
+{
+	
+}
+SLAPGain::~SLAPGain()
+{
+	
+}
+
+void SLAPGain::process(float* inAudio, float inGain, float* outAudio, int numSamplesToRender)
+{
+	
+}
