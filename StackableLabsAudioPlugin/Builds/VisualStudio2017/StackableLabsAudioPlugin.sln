@@ -1,0 +1,38 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2017
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackableLabsAudioPlugin - Standalone Plugin", "StackableLabsAudioPlugin_StandalonePlugin.vcxproj", "{D96CAD00-6E52-B29F-B7BB-45E2C84757E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D} = {87CBB6B5-E70C-8C3F-2DDD-08664175A51D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackableLabsAudioPlugin - VST3", "StackableLabsAudioPlugin_VST3.vcxproj", "{08A0085D-0F99-E4A6-68C2-3DC7E48A61A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D} = {87CBB6B5-E70C-8C3F-2DDD-08664175A51D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackableLabsAudioPlugin - Shared Code", "StackableLabsAudioPlugin_SharedCode.vcxproj", "{87CBB6B5-E70C-8C3F-2DDD-08664175A51D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08A0085D-0F99-E4A6-68C2-3DC7E48A61A1}.Debug|x64.ActiveCfg = Debug|x64
+		{08A0085D-0F99-E4A6-68C2-3DC7E48A61A1}.Debug|x64.Build.0 = Debug|x64
+		{08A0085D-0F99-E4A6-68C2-3DC7E48A61A1}.Release|x64.ActiveCfg = Release|x64
+		{08A0085D-0F99-E4A6-68C2-3DC7E48A61A1}.Release|x64.Build.0 = Release|x64
+		{D96CAD00-6E52-B29F-B7BB-45E2C84757E0}.Debug|x64.ActiveCfg = Debug|x64
+		{D96CAD00-6E52-B29F-B7BB-45E2C84757E0}.Debug|x64.Build.0 = Debug|x64
+		{D96CAD00-6E52-B29F-B7BB-45E2C84757E0}.Release|x64.ActiveCfg = Release|x64
+		{D96CAD00-6E52-B29F-B7BB-45E2C84757E0}.Release|x64.Build.0 = Release|x64
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D}.Debug|x64.ActiveCfg = Debug|x64
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D}.Debug|x64.Build.0 = Debug|x64
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D}.Release|x64.ActiveCfg = Release|x64
+		{87CBB6B5-E70C-8C3F-2DDD-08664175A51D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
