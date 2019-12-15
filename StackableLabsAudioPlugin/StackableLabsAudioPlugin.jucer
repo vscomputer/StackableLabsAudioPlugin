@@ -5,6 +5,18 @@
               companyName="Stackable Labs">
   <MAINGROUP id="WKt5nv" name="StackableLabsAudioPlugin">
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
+      <GROUP id="{9C218106-37DD-C5C9-D24F-2295F3906FC8}" name="Helpers">
+        <FILE id="kUYtq6" name="SLAPAudioHelpers.h" compile="0" resource="0"
+              file="Source/SLAPAudioHelpers.h"/>
+      </GROUP>
+      <GROUP id="{26F056DE-178E-0B8D-4663-4FF115F8DE24}" name="DSP">
+        <FILE id="eUzyDA" name="SLAPDelay.cpp" compile="1" resource="0" file="Source/SLAPDelay.cpp"/>
+        <FILE id="udK7MH" name="SLAPDelay.h" compile="0" resource="0" file="Source/SLAPDelay.h"/>
+        <FILE id="eNuDLO" name="SLAPGain.cpp" compile="1" resource="0" file="Source/SLAPGain.cpp"/>
+        <FILE id="HfLZRH" name="SLAPGain.h" compile="0" resource="0" file="Source/SLAPGain.h"/>
+        <FILE id="ccNuKW" name="SLAPLfo.cpp" compile="1" resource="0" file="Source/SLAPLfo.cpp"/>
+        <FILE id="c4aLhr" name="SLAPLfo.h" compile="0" resource="0" file="Source/SLAPLfo.h"/>
+      </GROUP>
       <FILE id="nwM9u6" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="g568nO" name="PluginProcessor.h" compile="0" resource="0"

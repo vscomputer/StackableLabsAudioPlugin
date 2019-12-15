@@ -136,6 +136,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPDelay.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPGain.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPLfo.cpp"/>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1978,6 +1981,10 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPAudioHelpers.h"/>
+    <ClInclude Include="..\..\Source\SLAPDelay.h"/>
+    <ClInclude Include="..\..\Source\SLAPGain.h"/>
+    <ClInclude Include="..\..\Source\SLAPLfo.h"/>
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginEditor.h"/>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>

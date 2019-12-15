@@ -2,6 +2,12 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="StackableLabsAudioPlugin\Source\Helpers">
+      <UniqueIdentifier>{1442373B-64F2-E960-40EF-DD36532A8808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackableLabsAudioPlugin\Source\DSP">
+      <UniqueIdentifier>{2C5E229D-4A16-23D0-CF2A-0574E968D9F1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source">
       <UniqueIdentifier>{2678285D-ACA1-EFA8-AA9B-CE0F7DED8402}</UniqueIdentifier>
     </Filter>
@@ -433,6 +439,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPDelay.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPGain.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPLfo.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp">
       <Filter>StackableLabsAudioPlugin\Source</Filter>
     </ClCompile>
@@ -2430,6 +2445,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPAudioHelpers.h">
+      <Filter>StackableLabsAudioPlugin\Source\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPDelay.h">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPGain.h">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPLfo.h">
+      <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PluginProcessor.h">
       <Filter>StackableLabsAudioPlugin\Source</Filter>
     </ClInclude>
