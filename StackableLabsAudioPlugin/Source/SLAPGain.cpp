@@ -21,5 +21,8 @@ SLAPGain::~SLAPGain()
 
 void SLAPGain::process(float* inAudio, float inGain, float* outAudio, int numSamplesToRender)
 {
-	
+	for (int i = 0; i < numSamplesToRender; i++)
+	{
+		outAudio[i] = inAudio[i] * inGain;
+	}
 }
