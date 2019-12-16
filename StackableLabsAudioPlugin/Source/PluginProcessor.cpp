@@ -153,6 +153,7 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
+		mGain[channel]->process(channelData, 0.5, channelData, buffer.getNumSamples());
 
         // ..do something to the data...
     }
@@ -181,6 +182,14 @@ void StackableLabsAudioPluginAudioProcessor::setStateInformation (const void* da
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+}
+
+void StackableLabsAudioPluginAudioProcessor::initializeDSP()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		mGain[i] = new SLAPGain();
+	}
 }
 
 //==============================================================================

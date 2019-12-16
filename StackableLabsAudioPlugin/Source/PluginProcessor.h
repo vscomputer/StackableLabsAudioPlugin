@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "SLAPGain.h"
 
 //==============================================================================
 /**
@@ -56,6 +57,9 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+	void initializeDSP();
+	ScopedPointer<SLAPGain> mGain[2];
+	//std::unique_ptr<SLAPGain> mGain[2];
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessor)
 };
