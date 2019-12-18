@@ -24,6 +24,7 @@ StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
                        )
 #endif
 {
+	initializeDSP();
 }
 
 StackableLabsAudioPluginAudioProcessor::~StackableLabsAudioPluginAudioProcessor()
@@ -97,12 +98,21 @@ void StackableLabsAudioPluginAudioProcessor::prepareToPlay (double sampleRate, i
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+
+    for (int i = 0; i < 2; i++)
+    {
+		_delay[i]->setSampleRate(sampleRate);
+    }
 }
 
 void StackableLabsAudioPluginAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
+    for (int i = 0; i < 2; i++)
+    {
+		_delay[i]->reset();
+    }
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -153,9 +163,10 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
-		mGain[channel]->process(channelData, 0.5, channelData, buffer.getNumSamples());
-
+		_gain[channel]->process(channelData, 0.5, channelData, buffer.getNumSamples());
+		_delay[channel]->process(channelData, 0.25, 0.5, 0.35, channelData, buffer.getNumSamples());
         // ..do something to the data...
+		
     }
 }
 
@@ -188,7 +199,8 @@ void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 {
 	for (int i = 0; i < 2; i++)
 	{
-		mGain[i] = new SLAPGain();
+		_gain[i] = new SLAPGain();
+		_delay[i] = new SLAPDelay();
 	}
 }
 
