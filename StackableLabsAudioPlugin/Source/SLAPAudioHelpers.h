@@ -9,7 +9,7 @@
 */
 
 #pragma once
-
+const static int maxBufferDelaySize = 192000;
 const static double sPi = 3.14159265;
 const static double sTwoPi = 6.28318531;
 

@@ -9,8 +9,7 @@
 */
 
 #pragma once
-
-const static int maxBufferDelaySize = 192000;
+#include "SLAPAudioHelpers.h"
 
 class SLAPDelay
 {
