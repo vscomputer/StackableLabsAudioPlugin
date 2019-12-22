@@ -26,6 +26,7 @@ private:
 	double _sampleRate;
 	double _buffer[maxBufferDelaySize];
 	double _feedbackSample;
+	float _timeSmoothed;
 
 	int _delayIndex;
 };

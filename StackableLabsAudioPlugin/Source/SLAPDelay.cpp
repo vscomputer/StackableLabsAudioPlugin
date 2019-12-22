@@ -13,7 +13,7 @@
 #include "SLAPAudioHelpers.h"
 
 SLAPDelay::SLAPDelay()
-	: _sampleRate(-1), _buffer{}, _feedbackSample(0.0), _delayIndex(0)
+	: _sampleRate(-1), _buffer{}, _feedbackSample(0.0), _timeSmoothed(0.0f), _delayIndex(0)
 {
 }
 
@@ -28,6 +28,7 @@ void SLAPDelay::setSampleRate(double inSampleRate)
 
 void SLAPDelay::reset()
 {
+	_timeSmoothed = 0.0f;
 	zeromem(_buffer, sizeof(double) * maxBufferDelaySize);
 }
 
@@ -38,10 +39,13 @@ void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float in
 	const float dry = 1.0 - wet;
 	const float feedbackMapped = jmap(inFeedback, 0.0f, 1.0f, 0.0f, 0.95f);
 
+	
+
 	for (int i = 0; i < inNumSamplesToRender; i++)
 	{
 		const double delayTimeModulation = (0.003 + (0.002* inModulationBuffer[i]));
-		const double delayTimeInSamples = (inTime * delayTimeModulation) * _sampleRate;
+		_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (inTime * delayTimeModulation));
+		const double delayTimeInSamples = _timeSmoothed * _sampleRate;
 		const auto sample = getInterpolatedSample(delayTimeInSamples);
 		_buffer[_delayIndex] = inAudio[i] + (_feedbackSample * feedbackMapped);
 		_feedbackSample = sample;
