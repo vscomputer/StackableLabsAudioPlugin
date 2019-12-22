@@ -31,16 +31,17 @@ void SLAPDelay::reset()
 	zeromem(_buffer, sizeof(double) * maxBufferDelaySize);
 }
 
-void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float inWetDry, float* outAudio,
+void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float inWetDry, float* inModulationBuffer, float* outAudio,
 	int inNumSamplesToRender)
-{
+{	
 	const float wet = inWetDry;
 	const float dry = 1.0 - wet;
 	const float feedbackMapped = jmap(inFeedback, 0.0f, 1.0f, 0.0f, 0.95f);
 
 	for (int i = 0; i < inNumSamplesToRender; i++)
 	{
-		const double delayTimeInSamples = inTime * _sampleRate;
+		const double delayTimeModulation = (0.003 + (0.002* inModulationBuffer[i]));
+		const double delayTimeInSamples = (inTime * delayTimeModulation) * _sampleRate;
 		const auto sample = getInterpolatedSample(delayTimeInSamples);
 		_buffer[_delayIndex] = inAudio[i] + (_feedbackSample * feedbackMapped);
 		_feedbackSample = sample;

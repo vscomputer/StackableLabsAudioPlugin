@@ -13,6 +13,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "SLAPGain.h"
 #include "SLAPDelay.h"
+#include "SLAPLfo.h"
 
 //==============================================================================
 /**
@@ -61,6 +62,8 @@ private:
 	void initializeDSP();
 	ScopedPointer<SLAPGain> _gain[2];
 	ScopedPointer<SLAPDelay> _delay[2];
+	ScopedPointer<SLAPLfo> _lfo[2];
+
 	//std::unique_ptr<SLAPGain> _gain[2];
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessor)

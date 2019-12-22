@@ -102,6 +102,7 @@ void StackableLabsAudioPluginAudioProcessor::prepareToPlay (double sampleRate, i
     for (int i = 0; i < 2; i++)
     {
 		_delay[i]->setSampleRate(sampleRate);
+		_lfo[i]->setSampleRate(sampleRate);
     }
 }
 
@@ -112,6 +113,7 @@ void StackableLabsAudioPluginAudioProcessor::releaseResources()
     for (int i = 0; i < 2; i++)
     {
 		_delay[i]->reset();
+		_lfo[i]->reset();
     }
 }
 
@@ -162,10 +164,12 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
     // interleaved by keeping the same state.
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
+		// ..do something to the data...
         auto* channelData = buffer.getWritePointer (channel);
 		_gain[channel]->process(channelData, 0.5, channelData, buffer.getNumSamples());
-		_delay[channel]->process(channelData, 0.25, 0.5, 0.35, channelData, buffer.getNumSamples());
-        // ..do something to the data...
+		_lfo[channel]->process(0.25, 0.5, buffer.getNumSamples());
+		_delay[channel]->process(channelData, 0.25, 0.5, 0.35, _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
+        
 		
     }
 }
@@ -201,6 +205,7 @@ void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 	{
 		_gain[i] = new SLAPGain();
 		_delay[i] = new SLAPDelay();
+		_lfo[i] = new SLAPLfo();
 	}
 }
 

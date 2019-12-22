@@ -29,6 +29,7 @@ void SLAPLfo::reset()
 
 void SLAPLfo::setSampleRate(double inSampleRate)
 {
+	_sampleRate = inSampleRate;
 }
 
 void SLAPLfo::process(float inRate, float inDepth, int inNumberOfSamples)
