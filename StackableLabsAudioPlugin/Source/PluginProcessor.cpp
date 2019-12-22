@@ -167,7 +167,8 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
 		// ..do something to the data...
         auto* channelData = buffer.getWritePointer (channel);
 		_gain[channel]->process(channelData, 0.5, channelData, buffer.getNumSamples());
-		_lfo[channel]->process(0.25, 0.5, buffer.getNumSamples());
+		const float rate = (channel == 0) ? 0 : 0.25f;
+		_lfo[channel]->process(rate, 0.5, buffer.getNumSamples());
 		_delay[channel]->process(channelData, 0.25, 0.5, 0.35, _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
         
 		
