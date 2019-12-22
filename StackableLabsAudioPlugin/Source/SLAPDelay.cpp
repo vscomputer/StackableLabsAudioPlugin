@@ -43,8 +43,8 @@ void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float in
 
 	for (int i = 0; i < inNumSamplesToRender; i++)
 	{
-		const double delayTimeModulation = (0.003 + (0.002* inModulationBuffer[i]));
-		_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (inTime * delayTimeModulation));
+		const double delayTimeModulation = (inTime + (0.002* inModulationBuffer[i]));
+		_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (delayTimeModulation));
 		const double delayTimeInSamples = _timeSmoothed * _sampleRate;
 		const auto sample = getInterpolatedSample(delayTimeInSamples);
 		_buffer[_delayIndex] = inAudio[i] + (_feedbackSample * feedbackMapped);
