@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="StackableLabsAudioPlugin\Source\Panels">
+      <UniqueIdentifier>{E0A69D10-7AA5-804F-5008-6220FB6CECFB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source\Helpers">
       <UniqueIdentifier>{1442373B-64F2-E960-40EF-DD36532A8808}</UniqueIdentifier>
     </Filter>
@@ -439,6 +442,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPCenterPanel.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPCenterPanelMenuBar.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPFxPanel.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPGainPanel.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPMainPanel.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPPanelBase.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPTopPanel.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SLAPDelay.cpp">
       <Filter>StackableLabsAudioPlugin\Source\DSP</Filter>
     </ClCompile>
@@ -2445,6 +2469,27 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPCenterPanel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPCenterPanelMenuBar.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPFxPanel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPGainPanel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPMainPanel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPPanelBase.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPTopPanel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\SLAPAudioHelpers.h">
       <Filter>StackableLabsAudioPlugin\Source\Helpers</Filter>
     </ClInclude>

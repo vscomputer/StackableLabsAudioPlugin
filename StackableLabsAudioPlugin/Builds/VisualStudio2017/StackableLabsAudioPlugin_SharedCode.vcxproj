@@ -136,6 +136,13 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPCenterPanel.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPCenterPanelMenuBar.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPFxPanel.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPGainPanel.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPMainPanel.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPPanelBase.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPTopPanel.cpp"/>
     <ClCompile Include="..\..\Source\SLAPDelay.cpp"/>
     <ClCompile Include="..\..\Source\SLAPGain.cpp"/>
     <ClCompile Include="..\..\Source\SLAPLfo.cpp"/>
@@ -1981,6 +1988,13 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPCenterPanel.h"/>
+    <ClInclude Include="..\..\Source\SLAPCenterPanelMenuBar.h"/>
+    <ClInclude Include="..\..\Source\SLAPFxPanel.h"/>
+    <ClInclude Include="..\..\Source\SLAPGainPanel.h"/>
+    <ClInclude Include="..\..\Source\SLAPMainPanel.h"/>
+    <ClInclude Include="..\..\Source\SLAPPanelBase.h"/>
+    <ClInclude Include="..\..\Source\SLAPTopPanel.h"/>
     <ClInclude Include="..\..\Source\SLAPAudioHelpers.h"/>
     <ClInclude Include="..\..\Source\SLAPDelay.h"/>
     <ClInclude Include="..\..\Source\SLAPGain.h"/>

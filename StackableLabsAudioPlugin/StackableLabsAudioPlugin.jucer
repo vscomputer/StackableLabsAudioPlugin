@@ -5,6 +5,30 @@
               companyName="Stackable Labs">
   <MAINGROUP id="WKt5nv" name="StackableLabsAudioPlugin">
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
+      <GROUP id="{38573E17-4624-CBE3-C176-7617A0B45C8A}" name="Panels">
+        <FILE id="YPRfAC" name="SLAPCenterPanel.cpp" compile="1" resource="0"
+              file="Source/SLAPCenterPanel.cpp"/>
+        <FILE id="PBJepr" name="SLAPCenterPanel.h" compile="0" resource="0"
+              file="Source/SLAPCenterPanel.h"/>
+        <FILE id="MsvOCD" name="SLAPCenterPanelMenuBar.cpp" compile="1" resource="0"
+              file="Source/SLAPCenterPanelMenuBar.cpp"/>
+        <FILE id="DJZyj0" name="SLAPCenterPanelMenuBar.h" compile="0" resource="0"
+              file="Source/SLAPCenterPanelMenuBar.h"/>
+        <FILE id="QUGckA" name="SLAPFxPanel.cpp" compile="1" resource="0" file="Source/SLAPFxPanel.cpp"/>
+        <FILE id="vfgefo" name="SLAPFxPanel.h" compile="0" resource="0" file="Source/SLAPFxPanel.h"/>
+        <FILE id="Ovsthv" name="SLAPGainPanel.cpp" compile="1" resource="0"
+              file="Source/SLAPGainPanel.cpp"/>
+        <FILE id="ftIZsa" name="SLAPGainPanel.h" compile="0" resource="0" file="Source/SLAPGainPanel.h"/>
+        <FILE id="t7tXEb" name="SLAPMainPanel.cpp" compile="1" resource="0"
+              file="Source/SLAPMainPanel.cpp"/>
+        <FILE id="YgiZMA" name="SLAPMainPanel.h" compile="0" resource="0" file="Source/SLAPMainPanel.h"/>
+        <FILE id="W4NRHA" name="SLAPPanelBase.cpp" compile="1" resource="0"
+              file="Source/SLAPPanelBase.cpp"/>
+        <FILE id="gZphMn" name="SLAPPanelBase.h" compile="0" resource="0" file="Source/SLAPPanelBase.h"/>
+        <FILE id="LkSktB" name="SLAPTopPanel.cpp" compile="1" resource="0"
+              file="Source/SLAPTopPanel.cpp"/>
+        <FILE id="tCjZJY" name="SLAPTopPanel.h" compile="0" resource="0" file="Source/SLAPTopPanel.h"/>
+      </GROUP>
       <GROUP id="{9C218106-37DD-C5C9-D24F-2295F3906FC8}" name="Helpers">
         <FILE id="kUYtq6" name="SLAPAudioHelpers.h" compile="0" resource="0"
               file="Source/SLAPAudioHelpers.h"/>
