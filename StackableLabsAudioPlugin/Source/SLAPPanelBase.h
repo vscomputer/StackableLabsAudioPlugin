@@ -9,3 +9,18 @@
 */
 
 #pragma once
+
+#include "JuceHeader.h"
+#include "PluginProcessor.h"
+
+class SLAPPanelBase
+	: Component
+{
+public:
+	SLAPPanelBase(StackableLabsAudioPluginAudioProcessor* inProcessor);
+	~SLAPPanelBase();
+
+	void paint(Graphics& g) override;
+protected:
+	StackableLabsAudioPluginAudioProcessor* _processor;
+};
