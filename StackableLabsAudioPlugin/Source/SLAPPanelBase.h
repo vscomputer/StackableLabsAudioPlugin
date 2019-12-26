@@ -12,9 +12,10 @@
 
 #include "JuceHeader.h"
 #include "PluginProcessor.h"
+#include "SLAPInterfaceDefines.h"
 
 class SLAPPanelBase
-	: Component
+	: public Component
 {
 public:
 	SLAPPanelBase(StackableLabsAudioPluginAudioProcessor* inProcessor);

@@ -9,3 +9,13 @@
 */
 
 #pragma once
+#include "SLAPPanelBase.h"
+
+class SLAPMainPanel
+	: public SLAPPanelBase
+{
+public:
+	SLAPMainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
+	~SLAPMainPanel();
+private:
+};
