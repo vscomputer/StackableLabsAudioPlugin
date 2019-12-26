@@ -17,6 +17,15 @@ SLAPMainPanel::SLAPMainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor
 	_topPanel = new SLAPTopPanel(inProcessor);
 	_topPanel->setTopLeftPosition(0, 0);
 	addAndMakeVisible(_topPanel);
+
+	_inputGainPanel = new SLAPGainPanel(inProcessor);
+	_inputGainPanel->setTopLeftPosition(0, TOP_PANEL_HEIGHT);
+	addAndMakeVisible(_inputGainPanel);
+
+	_outputGainPanel = new SLAPGainPanel(inProcessor);
+	_outputGainPanel->setTopLeftPosition(MAIN_PANEL_WIDTH - GAIN_PANEL_WIDTH, TOP_PANEL_HEIGHT);
+	addAndMakeVisible(_outputGainPanel);
+
 }
 
 SLAPMainPanel::~SLAPMainPanel()

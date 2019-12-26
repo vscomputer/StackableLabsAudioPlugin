@@ -9,3 +9,16 @@
 */
 
 #include "SLAPGainPanel.h"
+
+SLAPGainPanel::SLAPGainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
+	: SLAPPanelBase(inProcessor)
+{
+	setSize(GAIN_PANEL_WIDTH, GAIN_PANEL_HEIGHT);
+	
+}
+
+SLAPGainPanel::~SLAPGainPanel()
+{
+}
+
+
