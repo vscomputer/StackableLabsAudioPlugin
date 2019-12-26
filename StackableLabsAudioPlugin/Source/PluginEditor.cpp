@@ -17,7 +17,9 @@ StackableLabsAudioPluginAudioProcessorEditor::StackableLabsAudioPluginAudioProce
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setSize (MAIN_PANEL_WIDTH, MAIN_PANEL_HEIGHT);
+	_mainPanel = new SLAPMainPanel(&processor);
+	addAndMakeVisible(_mainPanel);
 }
 
 StackableLabsAudioPluginAudioProcessorEditor::~StackableLabsAudioPluginAudioProcessorEditor()
