@@ -19,3 +19,9 @@ SLAPTopPanel::SLAPTopPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 SLAPTopPanel::~SLAPTopPanel()
 {
 }
+
+void SLAPTopPanel::paint(Graphics& g)
+{
+	SLAPPanelBase::paint(g);
+	g.drawFittedText("Stackable Labs Audio Plugin", 0, 0, getWidth() - 10, getHeight(), Justification::centredRight, 1);
+}

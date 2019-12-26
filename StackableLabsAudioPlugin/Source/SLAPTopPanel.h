@@ -17,5 +17,6 @@ class SLAPTopPanel
 public:
 	SLAPTopPanel(StackableLabsAudioPluginAudioProcessor *inProcessor);
 	~SLAPTopPanel();
+	void paint(Graphics& g) override;
 private:
 };
