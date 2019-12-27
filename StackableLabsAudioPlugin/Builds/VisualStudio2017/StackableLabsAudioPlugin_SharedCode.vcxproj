@@ -1997,6 +1997,7 @@
     <ClInclude Include="..\..\Source\SLAPTopPanel.h"/>
     <ClInclude Include="..\..\Source\SLAPAudioHelpers.h"/>
     <ClInclude Include="..\..\Source\SLAPInterfaceDefines.h"/>
+    <ClInclude Include="..\..\Source\SLAPParameters.h"/>
     <ClInclude Include="..\..\Source\SLAPDelay.h"/>
     <ClInclude Include="..\..\Source\SLAPGain.h"/>
     <ClInclude Include="..\..\Source\SLAPLfo.h"/>

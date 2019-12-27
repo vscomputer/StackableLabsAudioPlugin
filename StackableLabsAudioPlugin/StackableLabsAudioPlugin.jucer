@@ -34,6 +34,8 @@
               file="Source/SLAPAudioHelpers.h"/>
         <FILE id="cMbDUv" name="SLAPInterfaceDefines.h" compile="0" resource="0"
               file="Source/SLAPInterfaceDefines.h"/>
+        <FILE id="Iuuoz7" name="SLAPParameters.h" compile="0" resource="0"
+              file="Source/SLAPParameters.h"/>
       </GROUP>
       <GROUP id="{26F056DE-178E-0B8D-4663-4FF115F8DE24}" name="DSP">
         <FILE id="eUzyDA" name="SLAPDelay.cpp" compile="1" resource="0" file="Source/SLAPDelay.cpp"/>
