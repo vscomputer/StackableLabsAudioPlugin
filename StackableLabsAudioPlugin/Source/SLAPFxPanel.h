@@ -9,3 +9,23 @@
 */
 
 #pragma once
+#include "SLAPPanelBase.h"
+
+enum SLAPFxPanelStyle
+{
+	kSLAPFxPanelStyle_Delay,
+	kSLAPFxPanelStyle_Chorus,
+	kSLAPFxPanelStyle_TotalNumStyles
+};
+
+class SLAPFxPanel
+	: public SLAPPanelBase
+{
+public:
+	SLAPFxPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
+	~SLAPFxPanel();
+
+	void setFxPanelStyle(SLAPFxPanelStyle inStyle);
+private:
+	SLAPFxPanelStyle _style;
+};
