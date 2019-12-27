@@ -26,6 +26,8 @@ public:
 	~SLAPFxPanel();
 
 	void setFxPanelStyle(SLAPFxPanelStyle inStyle);
+
+	void paint(Graphics& g) override;
 private:
 	SLAPFxPanelStyle _style;
 };

@@ -11,6 +11,7 @@
 #pragma once
 #include "SLAPPanelBase.h"
 #include "SLAPCenterPanelMenuBar.h"
+#include "SLAPFxPanel.h"
 
 class SLAPCenterPanel
 	: public SLAPPanelBase
@@ -20,4 +21,5 @@ public:
 	~SLAPCenterPanel();
 private:
 	ScopedPointer<SLAPCenterPanelMenuBar> _menuBar;
+	ScopedPointer<SLAPFxPanel> _fxPanel;
 };
