@@ -57,9 +57,11 @@ public:
     //==============================================================================
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+	AudioProcessorValueTreeState parameters;
 
 private:
 	void initializeDSP();
+	void initializeParameters();
 	ScopedPointer<SLAPGain> _gain[2];
 	ScopedPointer<SLAPDelay> _delay[2];
 	ScopedPointer<SLAPLfo> _lfo[2];

@@ -10,20 +10,23 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include "SLAPParameters.h"
 
 //==============================================================================
 StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
-                     #endif
-                       )
+	: AudioProcessor(BusesProperties()
+#if ! JucePlugin_IsMidiEffect
+#if ! JucePlugin_IsSynth
+		.withInput("Input", AudioChannelSet::stereo(), true)
+#endif
+		.withOutput("Output", AudioChannelSet::stereo(), true)
+#endif
+	),
+	parameters(*this, nullptr)
 #endif
 {
+	initializeParameters();
 	initializeDSP();
 }
 
@@ -207,6 +210,14 @@ void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 		_gain[i] = new SLAPGain();
 		_delay[i] = new SLAPDelay();
 		_lfo[i] = new SLAPLfo();
+	}
+}
+
+void StackableLabsAudioPluginAudioProcessor::initializeParameters()
+{
+	for (int i = 0; i < kParameter_TotalNumParameters; i++)
+	{
+		parameters.createAndAddParameter(SLAPParameterId[i], SLAPParameterId[i], SLAPParameterId[i], NormalisableRange<float>(0.0f, 1.0f), 0.5f, nullptr, nullptr);
 	}
 }
 

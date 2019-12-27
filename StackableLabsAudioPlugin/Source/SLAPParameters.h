@@ -22,3 +22,15 @@ enum kSLAPParameter
 	kParameter_ModulationDepth,
 	kParameter_TotalNumParameters
 };
+
+static String SLAPParameterId[kParameter_TotalNumParameters]
+{
+	"Input Gain",
+	"Time",
+	"Feedback",
+	"Wet/Dry",
+	"Type",
+	"Output Gain",
+	"Rate",
+	"Depth"
+};
