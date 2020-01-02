@@ -136,6 +136,8 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPParameterComboBox.cpp"/>
+    <ClCompile Include="..\..\Source\SLAPParameterSlider.cpp"/>
     <ClCompile Include="..\..\Source\SLAPCenterPanel.cpp"/>
     <ClCompile Include="..\..\Source\SLAPCenterPanelMenuBar.cpp"/>
     <ClCompile Include="..\..\Source\SLAPFxPanel.cpp"/>
@@ -1988,6 +1990,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPParameterComboBox.h"/>
+    <ClInclude Include="..\..\Source\SLAPParameterSlider.h"/>
     <ClInclude Include="..\..\Source\SLAPCenterPanel.h"/>
     <ClInclude Include="..\..\Source\SLAPCenterPanelMenuBar.h"/>
     <ClInclude Include="..\..\Source\SLAPFxPanel.h"/>

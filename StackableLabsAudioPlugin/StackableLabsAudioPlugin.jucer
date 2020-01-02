@@ -4,6 +4,16 @@
               jucerVersion="5.4.5" pluginFormats="buildAU,buildStandalone,buildVST3"
               companyName="Stackable Labs">
   <MAINGROUP id="WKt5nv" name="StackableLabsAudioPlugin">
+    <GROUP id="{056DBBEB-2F38-3B76-6AA6-84EEDD515289}" name="Parameter Control">
+      <FILE id="lfVAB6" name="SLAPParameterComboBox.cpp" compile="1" resource="0"
+            file="Source/SLAPParameterComboBox.cpp"/>
+      <FILE id="AmOc3s" name="SLAPParameterComboBox.h" compile="0" resource="0"
+            file="Source/SLAPParameterComboBox.h"/>
+      <FILE id="aGJ5nz" name="SLAPParameterSlider.cpp" compile="1" resource="0"
+            file="Source/SLAPParameterSlider.cpp"/>
+      <FILE id="Wxji4F" name="SLAPParameterSlider.h" compile="0" resource="0"
+            file="Source/SLAPParameterSlider.h"/>
+    </GROUP>
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
       <GROUP id="{38573E17-4624-CBE3-C176-7617A0B45C8A}" name="Panels">
         <FILE id="YPRfAC" name="SLAPCenterPanel.cpp" compile="1" resource="0"

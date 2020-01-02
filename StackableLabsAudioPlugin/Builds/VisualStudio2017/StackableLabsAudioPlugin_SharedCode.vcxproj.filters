@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="StackableLabsAudioPlugin\Parameter Control">
+      <UniqueIdentifier>{47CF5F2E-1030-729E-D417-224016F45E13}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source\Panels">
       <UniqueIdentifier>{E0A69D10-7AA5-804F-5008-6220FB6CECFB}</UniqueIdentifier>
     </Filter>
@@ -442,6 +445,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPParameterComboBox.cpp">
+      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPParameterSlider.cpp">
+      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SLAPCenterPanel.cpp">
       <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
     </ClCompile>
@@ -2469,6 +2478,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPParameterComboBox.h">
+      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPParameterSlider.h">
+      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\SLAPCenterPanel.h">
       <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
     </ClInclude>
