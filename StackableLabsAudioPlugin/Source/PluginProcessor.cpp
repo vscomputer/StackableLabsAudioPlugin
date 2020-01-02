@@ -169,11 +169,11 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
     {
 		// ..do something to the data...
         auto* channelData = buffer.getWritePointer (channel);
-		_gain[channel]->process(channelData, getParameter(kParameter_InputGain), channelData, buffer.getNumSamples());
+		_inputGain[channel]->process(channelData, getParameter(kParameter_InputGain), channelData, buffer.getNumSamples());
 		const float rate = (channel == 0) ? 0 : getParameter(kParameter_ModulationRate);
 		_lfo[channel]->process(rate, getParameter(kParameter_ModulationDepth), buffer.getNumSamples());
 		_delay[channel]->process(channelData, getParameter(kParameter_DelayTime), getParameter(kParameter_DelayFeedback), getParameter(kParameter_DelayWetDry), _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
-        
+		_outputGain[channel]->process(channelData, getParameter(kParameter_OutputGain), channelData, buffer.getNumSamples());
 		
     }
 }
@@ -207,7 +207,8 @@ void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 {
 	for (int i = 0; i < 2; i++)
 	{
-		_gain[i] = new SLAPGain();
+		_inputGain[i] = new SLAPGain();
+		_outputGain[i] = new SLAPGain();
 		_delay[i] = new SLAPDelay();
 		_lfo[i] = new SLAPLfo();
 	}

@@ -10,6 +10,7 @@
 
 #pragma once
 #include "SLAPPanelBase.h"
+#include "SLAPParameterSlider.h"
 
 class SLAPGainPanel
 	: public SLAPPanelBase
@@ -17,5 +18,7 @@ class SLAPGainPanel
 public:
 	SLAPGainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPGainPanel();
+	void setParameterId(int parameterId);
 private:
+	ScopedPointer<SLAPParameterSlider> _slider;
 };

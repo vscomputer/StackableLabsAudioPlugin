@@ -9,6 +9,7 @@
 */
 
 #include "SLAPMainPanel.h"
+#include "SLAPParameters.h"
 
 SLAPMainPanel::SLAPMainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	: SLAPPanelBase(inProcessor)
@@ -20,10 +21,12 @@ SLAPMainPanel::SLAPMainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor
 
 	_inputGainPanel = new SLAPGainPanel(inProcessor);
 	_inputGainPanel->setTopLeftPosition(0, TOP_PANEL_HEIGHT);
+	_inputGainPanel->setParameterId(kParameter_InputGain);
 	addAndMakeVisible(_inputGainPanel);
 
 	_outputGainPanel = new SLAPGainPanel(inProcessor);
 	_outputGainPanel->setTopLeftPosition(MAIN_PANEL_WIDTH - GAIN_PANEL_WIDTH, TOP_PANEL_HEIGHT);
+	_outputGainPanel->setParameterId(kParameter_OutputGain);
 	addAndMakeVisible(_outputGainPanel);
 
 	_centerPanel = new SLAPCenterPanel(inProcessor);

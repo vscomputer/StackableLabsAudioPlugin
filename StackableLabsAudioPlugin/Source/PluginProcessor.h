@@ -62,11 +62,12 @@ public:
 private:
 	void initializeDSP();
 	void initializeParameters();
-	ScopedPointer<SLAPGain> _gain[2];
+	ScopedPointer<SLAPGain> _inputGain[2];
+	ScopedPointer < SLAPGain > _outputGain[2];
 	ScopedPointer<SLAPDelay> _delay[2];
 	ScopedPointer<SLAPLfo> _lfo[2];
 
-	//std::unique_ptr<SLAPGain> _gain[2];
+	//std::unique_ptr<SLAPGain> _inputGain[2];
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessor)
 };
