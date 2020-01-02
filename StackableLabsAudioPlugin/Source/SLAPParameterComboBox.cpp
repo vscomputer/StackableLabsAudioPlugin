@@ -9,3 +9,13 @@
 */
 
 #include "SLAPParameterComboBox.h"
+
+SLAPParameterComboBox::SLAPParameterComboBox(AudioProcessorValueTreeState& stateToControl, const String& parameterId)
+	: juce::ComboBox(parameterId)
+{
+	_attachment = new AudioProcessorValueTreeState::ComboBoxAttachment(stateToControl, parameterId, *this);
+}
+
+SLAPParameterComboBox::~SLAPParameterComboBox()
+{
+}

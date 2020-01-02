@@ -9,3 +9,16 @@
 */
 
 #pragma once
+#include "JuceHeader.h"
+
+class SLAPParameterSlider
+	: public Slider
+{
+public:
+	SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId);
+	~SLAPParameterSlider();
+private:
+	ScopedPointer<AudioProcessorValueTreeState::SliderAttachment> _attachment;
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SLAPParameterSlider);
+};

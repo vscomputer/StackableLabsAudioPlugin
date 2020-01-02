@@ -9,3 +9,16 @@
 */
 
 #include "SLAPParameterSlider.h"
+
+SLAPParameterSlider::SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId)
+	: juce::Slider(parameterId)
+{
+	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
+	setTextBoxStyle(Slider::TextEntryBoxPosition::TextBoxBelow, false, 0, 0);
+	setRange(0.0f, 1.0f, 0.001f);
+	_attachment = new AudioProcessorValueTreeState::SliderAttachment(stateToControl, parameterId, *this);
+}
+
+SLAPParameterSlider::~SLAPParameterSlider()
+{
+}
