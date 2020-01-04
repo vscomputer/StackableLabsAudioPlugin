@@ -10,6 +10,7 @@
 
 #pragma once
 #include "SLAPPanelBase.h"
+#include "SLAPParameterSlider.h"
 
 enum SLAPFxPanelStyle
 {
@@ -30,4 +31,5 @@ public:
 	void paint(Graphics& g) override;
 private:
 	SLAPFxPanelStyle _style;
+	OwnedArray<SLAPParameterSlider> _sliders;
 };
