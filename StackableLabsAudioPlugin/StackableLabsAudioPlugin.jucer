@@ -42,6 +42,8 @@
       <GROUP id="{9C218106-37DD-C5C9-D24F-2295F3906FC8}" name="Helpers">
         <FILE id="kUYtq6" name="SLAPAudioHelpers.h" compile="0" resource="0"
               file="Source/SLAPAudioHelpers.h"/>
+        <FILE id="fzjef8" name="SLAPHelperFunctions.h" compile="0" resource="0"
+              file="Source/SLAPHelperFunctions.h"/>
         <FILE id="cMbDUv" name="SLAPInterfaceDefines.h" compile="0" resource="0"
               file="Source/SLAPInterfaceDefines.h"/>
         <FILE id="Iuuoz7" name="SLAPParameters.h" compile="0" resource="0"
