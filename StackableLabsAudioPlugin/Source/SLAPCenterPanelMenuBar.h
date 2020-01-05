@@ -10,6 +10,7 @@
 
 #pragma once
 #include "SLAPPanelBase.h"
+#include "SLAPParameterComboBox.h"
 
 class SLAPCenterPanelMenuBar
 	: public SLAPPanelBase
@@ -18,4 +19,5 @@ public:
 	SLAPCenterPanelMenuBar(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPCenterPanelMenuBar();
 private:
+	ScopedPointer<SLAPParameterComboBox> _fxTypeComboBox;
 };
