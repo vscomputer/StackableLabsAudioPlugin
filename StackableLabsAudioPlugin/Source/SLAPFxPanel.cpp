@@ -17,7 +17,7 @@ SLAPFxPanel::SLAPFxPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	_style(SLAPFxPanelStyle::kSLAPFxPanelStyle_Delay)
 {
 	setSize(FX_PANEL_WIDTH, FX_PANEL_HEIGHT);
-	setFxPanelStyle(kSLAPFxPanelStyle_Chorus);
+	setFxPanelStyle(kSLAPFxPanelStyle_Delay);
 }
 
 SLAPFxPanel::~SLAPFxPanel()
@@ -123,4 +123,11 @@ void SLAPFxPanel::paint(Graphics& g)
 	{
 		paintComponentLabel(g, _sliders[i]);
 	}
+}
+
+void SLAPFxPanel::comboBoxChanged(ComboBox* comboBoxThatHasChanged)
+{
+	SLAPFxPanelStyle style = (SLAPFxPanelStyle)comboBoxThatHasChanged->getSelectedItemIndex();
+
+	setFxPanelStyle(style);
 }

@@ -20,7 +20,8 @@ enum SLAPFxPanelStyle
 };
 
 class SLAPFxPanel
-	: public SLAPPanelBase
+	: public SLAPPanelBase,
+	  public ComboBox::Listener
 {
 public:
 	SLAPFxPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
@@ -29,6 +30,8 @@ public:
 	void setFxPanelStyle(SLAPFxPanelStyle inStyle);
 
 	void paint(Graphics& g) override;
+
+	void comboBoxChanged(ComboBox* comboBoxThatHasChanged) override;
 private:
 	SLAPFxPanelStyle _style;
 	OwnedArray<SLAPParameterSlider> _sliders;

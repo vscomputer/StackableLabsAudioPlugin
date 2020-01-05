@@ -18,6 +18,9 @@ class SLAPCenterPanelMenuBar
 public:
 	SLAPCenterPanelMenuBar(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPCenterPanelMenuBar();
+
+	void addFxTypeComboBoxListener(ComboBox::Listener* inListener);
+	void removeFxTypeComboBoxListener(ComboBox::Listener* inListener);
 private:
 	ScopedPointer<SLAPParameterComboBox> _fxTypeComboBox;
 };
