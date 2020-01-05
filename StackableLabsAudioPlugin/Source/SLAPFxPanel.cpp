@@ -10,6 +10,7 @@
 
 #include "SLAPFxPanel.h"
 #include "SLAPParameters.h"
+#include "SLAPHelperFunctions.h"
 
 SLAPFxPanel::SLAPFxPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	: SLAPPanelBase(inProcessor),
@@ -99,12 +100,12 @@ void SLAPFxPanel::paint(Graphics& g)
 	switch (_style) {
 		case kSLAPFxPanelStyle_Delay:
 		{
-			g.drawFittedText("DELAY", 0, 0, getWidth(), getHeight(), Justification::centred, 1);
+			g.drawFittedText("DELAY", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
 		}
 		break;
 		case kSLAPFxPanelStyle_Chorus:
 		{
-			g.drawFittedText("CHORUS", 0, 0, getWidth(), getHeight(), Justification::centred, 1);
+			g.drawFittedText("CHORUS", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
 		}
 		break;
 		case kSLAPFxPanelStyle_TotalNumStyles:
@@ -116,5 +117,10 @@ void SLAPFxPanel::paint(Graphics& g)
 		{
 			jassertfalse;
 		};
+	}
+
+	for (int i = 0; i < _sliders.size(); i++)
+	{
+		paintComponentLabel(g, _sliders[i]);
 	}
 }

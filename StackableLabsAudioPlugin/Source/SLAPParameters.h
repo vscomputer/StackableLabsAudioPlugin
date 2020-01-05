@@ -31,6 +31,6 @@ static String SLAPParameterId[kParameter_TotalNumParameters]
 	"Wet/Dry",
 	"Type",
 	"Output Gain",
-	"Rate",
-	"Depth"
+	"Modulation Rate",
+	"Modulation Depth"
 };
