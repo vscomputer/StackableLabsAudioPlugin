@@ -17,7 +17,9 @@ SLAPFxPanel::SLAPFxPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	_style(SLAPFxPanelStyle::kSLAPFxPanelStyle_Delay)
 {
 	setSize(FX_PANEL_WIDTH, FX_PANEL_HEIGHT);
-	setFxPanelStyle(kSLAPFxPanelStyle_Delay);
+
+	int style = (int)_processor->getParameter(kParameter_DelayType);
+	setFxPanelStyle((SLAPFxPanelStyle) style);
 }
 
 SLAPFxPanel::~SLAPFxPanel()
@@ -91,6 +93,7 @@ void SLAPFxPanel::setFxPanelStyle(SLAPFxPanelStyle inStyle)
 			jassertfalse;
 		};
 	}
+	repaint();
 }
 
 void SLAPFxPanel::paint(Graphics& g)

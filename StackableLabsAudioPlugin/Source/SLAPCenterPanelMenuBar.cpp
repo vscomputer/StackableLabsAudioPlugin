@@ -22,7 +22,7 @@ SLAPCenterPanelMenuBar::SLAPCenterPanelMenuBar(StackableLabsAudioPluginAudioProc
 	_fxTypeComboBox->setBounds(getWidth() - width, 0, width, getHeight());
 	_fxTypeComboBox->addItem("DELAY", 1);
 	_fxTypeComboBox->addItem("CHORUS", 2);
-	_fxTypeComboBox->setSelectedItemIndex(0, dontSendNotification);
+	_fxTypeComboBox->setSelectedItemIndex((int)_processor->getParameter(kParameter_DelayType), dontSendNotification);
 	addAndMakeVisible(_fxTypeComboBox);
 }
 
