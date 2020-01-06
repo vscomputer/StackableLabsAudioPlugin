@@ -11,6 +11,12 @@
 #pragma once
 #include "SLAPAudioHelpers.h"
 
+enum SLAPDelayType
+{
+	kSLAPDelayType_Delay = 0,
+	kSLAPDelayType_Chorus,
+};
+
 class SLAPDelay
 {
 public:
@@ -18,7 +24,7 @@ public:
 	~SLAPDelay();
 	void setSampleRate(double inSampleRate);
 	void reset();
-	void process(float* inAudio, float inTime, float inFeedback, float inWetDry, float* inModulationBuffer, float* outAudio, int inNumSamplesToRender);
+	void process(float* inAudio, float inTime, float inFeedback, float inWetDry, float inType, float* inModulationBuffer, float* outAudio, int inNumSamplesToRender);
 
 private:
 	double getInterpolatedSample(float inDelayTimeInSamples);

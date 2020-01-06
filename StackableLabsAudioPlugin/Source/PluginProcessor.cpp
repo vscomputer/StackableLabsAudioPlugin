@@ -172,7 +172,7 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
 		_inputGain[channel]->process(channelData, getParameter(kParameter_InputGain), channelData, buffer.getNumSamples());
 		const float rate = (channel == 0) ? 0 : getParameter(kParameter_ModulationRate);
 		_lfo[channel]->process(rate, getParameter(kParameter_ModulationDepth), buffer.getNumSamples());
-		_delay[channel]->process(channelData, getParameter(kParameter_DelayTime), getParameter(kParameter_DelayFeedback), getParameter(kParameter_DelayWetDry), _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
+		_delay[channel]->process(channelData, getParameter(kParameter_DelayTime), getParameter(kParameter_DelayFeedback), getParameter(kParameter_DelayWetDry), getParameter(kParameter_DelayType), _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
 		_outputGain[channel]->process(channelData, getParameter(kParameter_OutputGain), channelData, buffer.getNumSamples());
 		
     }

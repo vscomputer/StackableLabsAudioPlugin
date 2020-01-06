@@ -32,7 +32,7 @@ void SLAPDelay::reset()
 	zeromem(_buffer, sizeof(double) * maxBufferDelaySize);
 }
 
-void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float inWetDry, float* inModulationBuffer, float* outAudio,
+void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float inWetDry, float inType, float* inModulationBuffer, float* outAudio,
 	int inNumSamplesToRender)
 {	
 	const float wet = inWetDry;
@@ -43,8 +43,16 @@ void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float in
 
 	for (int i = 0; i < inNumSamplesToRender; i++)
 	{
-		const double delayTimeModulation = (inTime + (0.002* inModulationBuffer[i]));
-		_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (delayTimeModulation));
+		if((int)inType == kSLAPDelayType_Delay)
+		{
+			_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (inTime));
+		}
+		else
+		{
+			const double delayTimeModulation = (0.003 + (0.002* inModulationBuffer[i]));
+			_timeSmoothed = _timeSmoothed - slParameterSmoothingCoeff_Fine * (_timeSmoothed - (delayTimeModulation));
+		}
+		
 		const double delayTimeInSamples = _timeSmoothed * _sampleRate;
 		const auto sample = getInterpolatedSample(delayTimeInSamples);
 		_buffer[_delayIndex] = inAudio[i] + (_feedbackSample * feedbackMapped);
