@@ -10,6 +10,7 @@
 
 #include "SLAPGainPanel.h"
 #include "SLAPParameters.h"
+#include "SLAPHelperFunctions.h"
 
 SLAPGainPanel::SLAPGainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	: SLAPPanelBase(inProcessor)
@@ -31,6 +32,16 @@ void SLAPGainPanel::setParameterId(int parameterId)
 	_slider->setBounds((getWidth() * 0.5) - (sliderSize * 0.5), (getHeight() * 0.5) - (sliderSize * 0.5), sliderSize, sliderSize);
 
 	addAndMakeVisible(_slider);
+}
+
+void SLAPGainPanel::paint(Graphics& g)
+{
+	SLAPPanelBase::paint(g);
+
+	if(_slider)
+	{
+		paintComponentLabel(g, _slider);
+	}
 }
 
 

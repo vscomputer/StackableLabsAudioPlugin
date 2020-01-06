@@ -19,6 +19,7 @@ public:
 	SLAPGainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPGainPanel();
 	void setParameterId(int parameterId);
+	void paint(Graphics& g) override;
 private:
 	ScopedPointer<SLAPParameterSlider> _slider;
 };
