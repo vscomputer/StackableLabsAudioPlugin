@@ -55,7 +55,7 @@ void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float in
 		
 		const double delayTimeInSamples = _timeSmoothed * _sampleRate;
 		const auto sample = getInterpolatedSample(delayTimeInSamples);
-		_buffer[_delayIndex] = inAudio[i] + (_feedbackSample * feedbackMapped);
+		_buffer[_delayIndex] = tanh_clip( inAudio[i] + (_feedbackSample * feedbackMapped));
 		_feedbackSample = sample;
 		
 		outAudio[i] = inAudio[i] * dry + sample * wet;
