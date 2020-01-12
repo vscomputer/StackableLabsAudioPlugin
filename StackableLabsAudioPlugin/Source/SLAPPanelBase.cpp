@@ -21,9 +21,9 @@ SLAPPanelBase::~SLAPPanelBase()
 
 void SLAPPanelBase::paint(Graphics& g)
 {
-	g.setColour(Colours::whitesmoke);
+	g.setColour(Colours::grey);
 	g.fillAll();
 
-	g.setColour(Colours::black);
-	g.drawRect(0, 0, getWidth(), getHeight());
+	g.setColour(Colours::black);	
+	g.drawRoundedRectangle(0, 0, getWidth(), getHeight(), 4, 2);
 }
