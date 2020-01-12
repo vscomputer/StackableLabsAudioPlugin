@@ -37,9 +37,7 @@ void SLAPDelay::process(float* inAudio, float inTime, float inFeedback, float in
 {	
 	const float wet = inWetDry;
 	const float dry = 1.0 - wet;
-	const float feedbackMapped = jmap(inFeedback, 0.0f, 1.0f, 0.0f, 0.95f);
-
-	
+	const float feedbackMapped = jmap(inFeedback, 0.0f, 1.0f, 0.0f, 1.2f);	
 
 	for (int i = 0; i < inNumSamplesToRender; i++)
 	{
