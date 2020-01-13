@@ -196,12 +196,31 @@ void StackableLabsAudioPluginAudioProcessor::getStateInformation (MemoryBlock& d
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+
+	XmlElement preset("SLAP_StateInfo");
+	XmlElement* presetBody = new XmlElement("SLAP_Preset");
+
+	_presetManager->getXmlForPreset(presetBody);
+
+	preset.addChildElement(presetBody);
+	copyXmlToBinary(preset, destData);
 }
 
 void StackableLabsAudioPluginAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+
+	auto xmlState = getXmlFromBinary(data, sizeInBytes);
+
+	if(xmlState)
+	{
+		forEachXmlChildElement(*xmlState, subChild)
+		{
+			_presetManager->loadPresetForXml(subChild);
+		}
+	}
+	else { jassertfalse; }
 }
 
 void StackableLabsAudioPluginAudioProcessor::initializeDSP()
