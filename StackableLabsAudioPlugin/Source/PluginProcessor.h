@@ -14,6 +14,7 @@
 #include "SLAPGain.h"
 #include "SLAPDelay.h"
 #include "SLAPLfo.h"
+#include "SLAPPresetManager.h"
 
 //==============================================================================
 /**
@@ -66,6 +67,7 @@ private:
 	ScopedPointer < SLAPGain > _outputGain[2];
 	ScopedPointer<SLAPDelay> _delay[2];
 	ScopedPointer<SLAPLfo> _lfo[2];
+	ScopedPointer<SLAPPresetManager> _presetManager;
 
 	//std::unique_ptr<SLAPGain> _inputGain[2];
     //==============================================================================

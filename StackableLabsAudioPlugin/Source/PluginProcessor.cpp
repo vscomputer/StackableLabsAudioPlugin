@@ -28,6 +28,7 @@ StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
 {
 	initializeParameters();
 	initializeDSP();
+	_presetManager = new SLAPPresetManager(this);
 }
 
 StackableLabsAudioPluginAudioProcessor::~StackableLabsAudioPluginAudioProcessor()
