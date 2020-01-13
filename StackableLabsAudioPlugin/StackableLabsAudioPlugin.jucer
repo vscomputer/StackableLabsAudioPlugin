@@ -15,6 +15,12 @@
             file="Source/SLAPParameterSlider.h"/>
     </GROUP>
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
+      <GROUP id="{1D8F5344-E2FD-551E-02F7-B8D676A1E6E2}" name="Managers">
+        <FILE id="XrsEvX" name="SLAPPresetManager.cpp" compile="1" resource="0"
+              file="Source/SLAPPresetManager.cpp"/>
+        <FILE id="aEtVAg" name="SLAPPresetManager.h" compile="0" resource="0"
+              file="Source/SLAPPresetManager.h"/>
+      </GROUP>
       <GROUP id="{38573E17-4624-CBE3-C176-7617A0B45C8A}" name="Panels">
         <FILE id="YPRfAC" name="SLAPCenterPanel.cpp" compile="1" resource="0"
               file="Source/SLAPCenterPanel.cpp"/>

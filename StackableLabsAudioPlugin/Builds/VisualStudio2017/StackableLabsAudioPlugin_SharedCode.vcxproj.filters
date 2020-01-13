@@ -5,6 +5,9 @@
     <Filter Include="StackableLabsAudioPlugin\Parameter Control">
       <UniqueIdentifier>{47CF5F2E-1030-729E-D417-224016F45E13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StackableLabsAudioPlugin\Source\Managers">
+      <UniqueIdentifier>{D8E79F68-9E83-3101-173F-600B1AAF26F1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source\Panels">
       <UniqueIdentifier>{E0A69D10-7AA5-804F-5008-6220FB6CECFB}</UniqueIdentifier>
     </Filter>
@@ -450,6 +453,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\SLAPParameterSlider.cpp">
       <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SLAPPresetManager.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Managers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SLAPCenterPanel.cpp">
       <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
@@ -2483,6 +2489,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\SLAPParameterSlider.h">
       <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPPresetManager.h">
+      <Filter>StackableLabsAudioPlugin\Source\Managers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SLAPCenterPanel.h">
       <Filter>StackableLabsAudioPlugin\Source\Panels</Filter>
