@@ -11,6 +11,8 @@
 #pragma once
 #include "JuceHeader.h"
 
+const static String PRESET_FILE_EXTENSION = ".spf";
+
 class SLAPPresetManager
 {
 public:
@@ -19,7 +21,22 @@ public:
 
 	void getXmlForPreset(XmlElement* inElement);
 	void loadPresetForXml(XmlElement* inElement);
+
+	int getNumberOfPresets();
+	String getPresetName(int inPresetIndex);
+	void createNewPreset();
+	void savePreset();
+	void saveAsPreset(String inPresetName);
+	void loadPreset(int inPresetIndex);
+	bool isCurrentPresetSaved();
+	String getCurrentPresetName();
 private:
+	void storeLocalPreset();
+	bool _currentPresetIsSaved;
+	File _currentlyLoadedPreset;
+	Array<File> _localPresets;
+	String _currentPresetName;
+	String _presetDirectory;
 	XmlElement* _currentPresetXml;
 	AudioProcessor* _processor;
 };

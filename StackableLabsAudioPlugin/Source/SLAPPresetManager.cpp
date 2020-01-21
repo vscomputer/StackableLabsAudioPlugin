@@ -11,8 +11,13 @@
 #include "SLAPPresetManager.h"
 
 SLAPPresetManager::SLAPPresetManager(AudioProcessor* inProcessor)
-	:_processor(inProcessor)
+	:_currentPresetIsSaved(false),
+	_currentPresetName("Untitled"),
+	_processor(inProcessor)
 {
+	const String pluginName = _processor->getName();
+
+	_presetDirectory = File::getSpecialLocation(File::userDesktopDirectory).getFullPathName() + pluginName;
 }
 
 SLAPPresetManager::~SLAPPresetManager()
@@ -49,4 +54,40 @@ void SLAPPresetManager::loadPresetForXml(XmlElement* inElement)
 		}		
 	}
 
+}
+
+int SLAPPresetManager::getNumberOfPresets()
+{
+}
+
+String SLAPPresetManager::getPresetName(int inPresetIndex)
+{
+}
+
+void SLAPPresetManager::createNewPreset()
+{
+}
+
+void SLAPPresetManager::savePreset()
+{
+}
+
+void SLAPPresetManager::saveAsPreset(String inPresetName)
+{
+}
+
+void SLAPPresetManager::loadPreset(int inPresetIndex)
+{
+}
+
+bool SLAPPresetManager::isCurrentPresetSaved()
+{
+}
+
+String SLAPPresetManager::getCurrentPresetName()
+{
+}
+
+void SLAPPresetManager::storeLocalPreset()
+{
 }
