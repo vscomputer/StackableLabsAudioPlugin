@@ -29,7 +29,7 @@ public:
 	void saveAsPreset(String inPresetName);
 	void loadPreset(int inPresetIndex);
 	bool isCurrentPresetSaved();
-	String getCurrentPresetName();
+	String getCurrentPresetName();	
 private:
 	void storeLocalPreset();
 	bool _currentPresetIsSaved;

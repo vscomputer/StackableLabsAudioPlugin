@@ -59,6 +59,10 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 	AudioProcessorValueTreeState parameters;
+	SLAPPresetManager* getPresetManager()
+	{
+		return  _presetManager;
+	}
 
 private:
 	void initializeDSP();
