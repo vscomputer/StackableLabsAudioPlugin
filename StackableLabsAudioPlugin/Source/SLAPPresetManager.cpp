@@ -18,6 +18,13 @@ SLAPPresetManager::SLAPPresetManager(AudioProcessor* inProcessor)
 	const String pluginName = _processor->getName();
 
 	_presetDirectory = File::getSpecialLocation(File::userDesktopDirectory).getFullPathName() + pluginName;
+
+	if(!File(_presetDirectory).exists())
+	{
+		File(_presetDirectory).createDirectory();
+	}
+
+	storeLocalPreset();
 }
 
 SLAPPresetManager::~SLAPPresetManager()
