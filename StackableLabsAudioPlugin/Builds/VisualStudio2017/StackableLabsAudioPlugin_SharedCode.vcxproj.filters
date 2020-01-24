@@ -2523,6 +2523,9 @@
     <ClInclude Include="..\..\Source\SLAPInterfaceDefines.h">
       <Filter>StackableLabsAudioPlugin\Source\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\SLAPLookAndFeel.h">
+      <Filter>StackableLabsAudioPlugin\Source\Helpers</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\SLAPParameters.h">
       <Filter>StackableLabsAudioPlugin\Source\Helpers</Filter>
     </ClInclude>

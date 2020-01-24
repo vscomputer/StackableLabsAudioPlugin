@@ -52,6 +52,8 @@
               file="Source/SLAPHelperFunctions.h"/>
         <FILE id="cMbDUv" name="SLAPInterfaceDefines.h" compile="0" resource="0"
               file="Source/SLAPInterfaceDefines.h"/>
+        <FILE id="Ez9PPO" name="SLAPLookAndFeel.h" compile="0" resource="0"
+              file="Source/SLAPLookAndFeel.h"/>
         <FILE id="Iuuoz7" name="SLAPParameters.h" compile="0" resource="0"
               file="Source/SLAPParameters.h"/>
       </GROUP>
