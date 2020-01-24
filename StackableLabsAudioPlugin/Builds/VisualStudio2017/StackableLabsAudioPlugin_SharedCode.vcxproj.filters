@@ -2,8 +2,11 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="StackableLabsAudioPlugin\Parameter Control">
-      <UniqueIdentifier>{47CF5F2E-1030-729E-D417-224016F45E13}</UniqueIdentifier>
+    <Filter Include="StackableLabsAudioPlugin\Source\Parameter Control">
+      <UniqueIdentifier>{88C9861A-345F-95DF-CCFA-B805ADAA4105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackableLabsAudioPlugin\Source\Assets">
+      <UniqueIdentifier>{4D1A850A-AE52-EFBC-9A53-FAC9512F02B5}</UniqueIdentifier>
     </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source\Managers">
       <UniqueIdentifier>{D8E79F68-9E83-3101-173F-600B1AAF26F1}</UniqueIdentifier>
@@ -449,10 +452,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\SLAPParameterComboBox.cpp">
-      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+      <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SLAPParameterSlider.cpp">
-      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+      <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SLAPPresetManager.cpp">
       <Filter>StackableLabsAudioPlugin\Source\Managers</Filter>
@@ -2440,6 +2443,9 @@
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_opengl\juce_opengl.mm">
       <Filter>JUCE Modules\juce_opengl</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
@@ -2485,10 +2491,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\SLAPParameterComboBox.h">
-      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+      <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SLAPParameterSlider.h">
-      <Filter>StackableLabsAudioPlugin\Parameter Control</Filter>
+      <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SLAPPresetManager.h">
       <Filter>StackableLabsAudioPlugin\Source\Managers</Filter>
@@ -4743,11 +4749,20 @@
     <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Assets\kadenze_bg.png">
+      <Filter>StackableLabsAudioPlugin\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Assets\kadenze_knob.png">
+      <Filter>StackableLabsAudioPlugin\Source\Assets</Filter>
+    </None>
     <None Include="..\..\..\..\..\..\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">
       <Filter>JUCE Modules\juce_audio_formats\codecs\flac</Filter>
     </None>

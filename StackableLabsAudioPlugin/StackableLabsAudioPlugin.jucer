@@ -4,17 +4,22 @@
               jucerVersion="5.4.5" pluginFormats="buildAU,buildStandalone,buildVST3"
               companyName="Stackable Labs">
   <MAINGROUP id="WKt5nv" name="StackableLabsAudioPlugin">
-    <GROUP id="{056DBBEB-2F38-3B76-6AA6-84EEDD515289}" name="Parameter Control">
-      <FILE id="lfVAB6" name="SLAPParameterComboBox.cpp" compile="1" resource="0"
-            file="Source/SLAPParameterComboBox.cpp"/>
-      <FILE id="AmOc3s" name="SLAPParameterComboBox.h" compile="0" resource="0"
-            file="Source/SLAPParameterComboBox.h"/>
-      <FILE id="aGJ5nz" name="SLAPParameterSlider.cpp" compile="1" resource="0"
-            file="Source/SLAPParameterSlider.cpp"/>
-      <FILE id="Wxji4F" name="SLAPParameterSlider.h" compile="0" resource="0"
-            file="Source/SLAPParameterSlider.h"/>
-    </GROUP>
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
+      <GROUP id="{056DBBEB-2F38-3B76-6AA6-84EEDD515289}" name="Parameter Control">
+        <FILE id="lfVAB6" name="SLAPParameterComboBox.cpp" compile="1" resource="0"
+              file="Source/SLAPParameterComboBox.cpp"/>
+        <FILE id="AmOc3s" name="SLAPParameterComboBox.h" compile="0" resource="0"
+              file="Source/SLAPParameterComboBox.h"/>
+        <FILE id="aGJ5nz" name="SLAPParameterSlider.cpp" compile="1" resource="0"
+              file="Source/SLAPParameterSlider.cpp"/>
+        <FILE id="Wxji4F" name="SLAPParameterSlider.h" compile="0" resource="0"
+              file="Source/SLAPParameterSlider.h"/>
+      </GROUP>
+      <GROUP id="{36DF28FC-610B-5F59-7B59-2A8043C02F11}" name="Assets">
+        <FILE id="L0Jdy5" name="kadenze_bg.png" compile="0" resource="1" file="Assets/kadenze_bg.png"/>
+        <FILE id="L0Ov1W" name="kadenze_knob.png" compile="0" resource="1"
+              file="Assets/kadenze_knob.png"/>
+      </GROUP>
       <GROUP id="{1D8F5344-E2FD-551E-02F7-B8D676A1E6E2}" name="Managers">
         <FILE id="XrsEvX" name="SLAPPresetManager.cpp" compile="1" resource="0"
               file="Source/SLAPPresetManager.cpp"/>
