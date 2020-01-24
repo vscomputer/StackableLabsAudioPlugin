@@ -26,3 +26,11 @@ const static int CENTER_PANEL_MENU_BAR_HEIGHT = 35;
 
 const static int FX_PANEL_WIDTH = CENTER_PANEL_WIDTH;
 const static int FX_PANEL_HEIGHT = CENTER_PANEL_HEIGHT - CENTER_PANEL_MENU_BAR_HEIGHT;
+
+const Colour SLAPColour_1 = Colour(105, 105, 105);
+const Colour SLAPColour_2 = Colour(0, 0, 0).withAlpha(0.0f);
+const Colour SLAPColour_3 = Colour(0, 0, 0).withAlpha(0.3f);
+const Colour SLAPColour_4 = Colour(0, 0, 0).withAlpha(0.6f);
+const Colour SLAPColour_5 = Colour(105, 105, 105).withAlpha(0.3f);
+const Colour SLAPColour_6 = Colour(0,0,0).withAlpha(0.8f);
+const Colour SLAPColour_7 = Colour(125, 125, 125);
