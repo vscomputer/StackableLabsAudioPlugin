@@ -25,7 +25,7 @@ SLAPGainPanel::~SLAPGainPanel()
 
 void SLAPGainPanel::setParameterId(int parameterId)
 {
-	_slider = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[parameterId]);
+	_slider = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[parameterId], SLAPParameterLabel[parameterId]);
 
 	const int sliderSize = 54;
 

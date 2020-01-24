@@ -34,3 +34,15 @@ static String SLAPParameterId[kParameter_TotalNumParameters]
 	"ModulationRate",
 	"ModulationDepth"
 };
+
+static String SLAPParameterLabel[kParameter_TotalNumParameters]
+{
+	"Input Gain",
+	"Delay Time",
+	"Delay Feedback",
+	"Delay Amount",
+	"Type",
+	"Output Gain",
+	"Modulation Rate",
+	"Modulation Depth"
+};

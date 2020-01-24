@@ -39,7 +39,7 @@ void SLAPFxPanel::setFxPanelStyle(SLAPFxPanelStyle inStyle)
 	switch (_style) {
 		case kSLAPFxPanelStyle_Delay:
 		{
-			SLAPParameterSlider* time = new SLAPParameterSlider(_processor->parameters,SLAPParameterId[kParameter_DelayTime]);
+			SLAPParameterSlider* time = new SLAPParameterSlider(_processor->parameters,SLAPParameterId[kParameter_DelayTime], SLAPParameterLabel[kParameter_DelayTime]);
 			time->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(time);
 
@@ -47,14 +47,14 @@ void SLAPFxPanel::setFxPanelStyle(SLAPFxPanelStyle inStyle)
 
 			x = x + (sliderSize * 2);
 
-			SLAPParameterSlider* feedback = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayFeedback]);
+			SLAPParameterSlider* feedback = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayFeedback],SLAPParameterLabel[kParameter_DelayFeedback]);
 			feedback->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(feedback);
 
 			_sliders.add(feedback);
 			x = x + (sliderSize * 2);
 
-			SLAPParameterSlider* wetDry = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayWetDry]);
+			SLAPParameterSlider* wetDry = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayWetDry], SLAPParameterLabel[kParameter_DelayWetDry]);
 			wetDry->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(wetDry);
 
@@ -64,20 +64,20 @@ void SLAPFxPanel::setFxPanelStyle(SLAPFxPanelStyle inStyle)
 		break;
 		case kSLAPFxPanelStyle_Chorus:
 		{
-			SLAPParameterSlider* rate = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_ModulationRate]);
+			SLAPParameterSlider* rate = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_ModulationRate], SLAPParameterId[kParameter_ModulationRate]);
 			rate->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(rate);
 
 			_sliders.add(rate);
 			x = x + (sliderSize * 2);
 
-			SLAPParameterSlider* depth = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_ModulationDepth]);
+			SLAPParameterSlider* depth = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_ModulationDepth], SLAPParameterId[kParameter_ModulationDepth]);
 			depth->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(depth);
 			_sliders.add(depth);
 			x = x + (sliderSize * 2);
 
-			SLAPParameterSlider* wetDry = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayWetDry]);
+			SLAPParameterSlider* wetDry = new SLAPParameterSlider(_processor->parameters, SLAPParameterId[kParameter_DelayWetDry], SLAPParameterLabel[kParameter_DelayWetDry]);
 			wetDry->setBounds(x, y, sliderSize, sliderSize);
 			addAndMakeVisible(wetDry);
 			_sliders.add(wetDry);

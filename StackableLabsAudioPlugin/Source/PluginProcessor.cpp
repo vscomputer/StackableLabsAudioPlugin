@@ -243,7 +243,7 @@ void StackableLabsAudioPluginAudioProcessor::initializeParameters()
 		{
 			defaultValue = 0.0f;
 		}
-		parameters.createAndAddParameter(SLAPParameterId[i], SLAPParameterId[i], SLAPParameterId[i], NormalisableRange<float>(0.0f, 1.0f), defaultValue, nullptr, nullptr);
+		parameters.createAndAddParameter(SLAPParameterId[i], SLAPParameterId[i], SLAPParameterLabel[i], NormalisableRange<float>(0.0f, 1.0f), defaultValue, nullptr, nullptr);
 	}
 	parameters.state = ValueTree(Identifier("SLAP"));
 }

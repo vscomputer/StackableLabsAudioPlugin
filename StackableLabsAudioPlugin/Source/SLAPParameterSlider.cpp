@@ -10,7 +10,7 @@
 
 #include "SLAPParameterSlider.h"
 
-SLAPParameterSlider::SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId)
+SLAPParameterSlider::SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId, const String& parameterLabel)
 	: juce::Slider(parameterId)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);

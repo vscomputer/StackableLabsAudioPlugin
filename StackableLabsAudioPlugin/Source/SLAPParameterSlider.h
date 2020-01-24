@@ -15,7 +15,7 @@ class SLAPParameterSlider
 	: public Slider
 {
 public:
-	SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId);
+	SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId, const String& parameterLabel);
 	~SLAPParameterSlider();
 private:
 	ScopedPointer<AudioProcessorValueTreeState::SliderAttachment> _attachment;
