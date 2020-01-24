@@ -10,7 +10,6 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "SLAPLookAndFeel.h"
 
 //==============================================================================
 StackableLabsAudioPluginAudioProcessorEditor::StackableLabsAudioPluginAudioProcessorEditor (StackableLabsAudioPluginAudioProcessor& p)
@@ -18,13 +17,22 @@ StackableLabsAudioPluginAudioProcessorEditor::StackableLabsAudioPluginAudioProce
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (MAIN_PANEL_WIDTH, MAIN_PANEL_HEIGHT);
+	_lookAndFeel = new SLAPLookAndFeel();
+	setLookAndFeel(_lookAndFeel);
+	LookAndFeel::setDefaultLookAndFeel(_lookAndFeel);
+	
+	setSize (MAIN_PANEL_WIDTH, MAIN_PANEL_HEIGHT);
 	_mainPanel = new SLAPMainPanel(&processor);
+	
 	addAndMakeVisible(_mainPanel);
+
+	
 }
 
 StackableLabsAudioPluginAudioProcessorEditor::~StackableLabsAudioPluginAudioProcessorEditor()
 {
+	setLookAndFeel(nullptr);
+	LookAndFeel::setDefaultLookAndFeel(nullptr);
 }
 
 //==============================================================================

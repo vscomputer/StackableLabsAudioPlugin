@@ -13,6 +13,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
 #include "SLAPMainPanel.h"
+#include "SLAPLookAndFeel.h"
 
 //==============================================================================
 /**
@@ -34,6 +35,7 @@ private:
 
 	//UI elements
 	ScopedPointer<SLAPMainPanel> _mainPanel;
+	ScopedPointer<SLAPLookAndFeel> _lookAndFeel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessorEditor)
 };
