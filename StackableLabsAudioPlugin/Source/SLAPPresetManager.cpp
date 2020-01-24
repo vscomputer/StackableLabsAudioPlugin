@@ -23,7 +23,7 @@ SLAPPresetManager::SLAPPresetManager(AudioProcessor* inProcessor)
 {
 	const String pluginName = _processor->getName();
 
-	_presetDirectory = File::getSpecialLocation(File::userDesktopDirectory).getFullPathName() + pluginName;
+	_presetDirectory = File::getSpecialLocation(File::userDesktopDirectory).getFullPathName() + directorySeparator + pluginName;
 
 	if(!File(_presetDirectory).exists())
 	{
@@ -106,7 +106,7 @@ void SLAPPresetManager::savePreset()
 
 void SLAPPresetManager::saveAsPreset(String inPresetName)
 {
-	File presetFile = File(_presetDirectory + directorySeparator + inPresetName);
+	File presetFile = File(_presetDirectory + directorySeparator + inPresetName + PRESET_FILE_EXTENSION);
 
 	if(!presetFile.exists())
 	{

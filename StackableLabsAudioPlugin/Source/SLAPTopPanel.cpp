@@ -68,6 +68,7 @@ void SLAPTopPanel::buttonClicked(Button* b)
 	if(b == _newPreset)
 	{
 		presetManager->createNewPreset();
+		updatePresetComboBox();
 	}
 	else if(b == _savePreset)
 	{
@@ -81,6 +82,12 @@ void SLAPTopPanel::buttonClicked(Button* b)
 
 void SLAPTopPanel::comboBoxChanged(ComboBox* comboBoxThatHasChanged)
 {
+	SLAPPresetManager* presetManager = _processor->getPresetManager();
+	if(comboBoxThatHasChanged == _presetDisplay)
+	{
+		const int index = _presetDisplay->getSelectedItemIndex();
+		presetManager->loadPreset(index);
+	}
 }
 
 void SLAPTopPanel::displaySaveAsPopup()
@@ -100,6 +107,8 @@ void SLAPTopPanel::displaySaveAsPopup()
 	{
 		String presetName = window.getTextEditor("presetName")->getText();
 		presetManager->saveAsPreset(presetName);
+
+		updatePresetComboBox();
 	}
 }
 
@@ -110,6 +119,8 @@ void SLAPTopPanel::updatePresetComboBox()
 	String currentPresetName = presetManager->getCurrentPresetName();
 
 	_presetDisplay->clear(dontSendNotification);
+
+	_presetDisplay->setText(presetManager->getCurrentPresetName());
 
 	const int numPresets = presetManager->getNumberOfPresets();
 
