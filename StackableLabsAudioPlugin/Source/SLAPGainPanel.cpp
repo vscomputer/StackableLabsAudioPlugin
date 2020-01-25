@@ -29,7 +29,7 @@ void SLAPGainPanel::setParameterId(int parameterId)
 
 	const int sliderSize = 54;
 
-	_slider->setBounds((getWidth() * 0.5) - (sliderSize * 0.5), (getHeight() * 0.5) - (sliderSize * 0.5), sliderSize, sliderSize);
+	_slider->setBounds((getWidth() * 0.5) - (sliderSize * 0.5), (getHeight() * 0.25) - (sliderSize * 0.5), sliderSize, sliderSize);
 
 	addAndMakeVisible(_slider);
 }
