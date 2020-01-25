@@ -42,12 +42,11 @@ void SLAPVuMeter::paint(Graphics& g)
 	if(ch1Fill < 0)
 	{
 		ch1Fill = 0;
-	}
-
-	g.fillRect(0, ch0Fill, meter_width, getHeight());
-	g.fillRect(meter_width * 2, ch1Fill, meter_width, getHeight());
+	}	
 
 	g.setColour(SLAPColour_7);
+	g.fillRect(0, ch0Fill, meter_width, getHeight());
+	g.fillRect(meter_width * 2, ch1Fill, meter_width, getHeight());
 }
 
 void SLAPVuMeter::setParameterId(int inParameterId)

@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include <math.h>
+#include "JuceHeader.h"
 //#define slParameterSmoothingCoeff_Generic = 0.4
 //#define slParameterSmoothingCoeff_Fine = 0.002
 

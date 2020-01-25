@@ -11,6 +11,7 @@
 #pragma once
 #include "SLAPPanelBase.h"
 #include "SLAPParameterSlider.h"
+#include "SLAPVuMeter.h"
 
 class SLAPGainPanel
 	: public SLAPPanelBase
@@ -18,8 +19,9 @@ class SLAPGainPanel
 public:
 	SLAPGainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPGainPanel();
-	void setParameterId(int parameterId);
+	void setParameterId(int inParameterId);
 	void paint(Graphics& g) override;
 private:
 	ScopedPointer<SLAPParameterSlider> _slider;
+	ScopedPointer<SLAPVuMeter> _vuMeter;
 };
