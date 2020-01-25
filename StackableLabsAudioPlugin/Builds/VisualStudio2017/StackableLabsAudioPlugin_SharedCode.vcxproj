@@ -136,6 +136,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPVuMeter.cpp"/>
     <ClCompile Include="..\..\Source\SLAPParameterComboBox.cpp"/>
     <ClCompile Include="..\..\Source\SLAPParameterSlider.cpp"/>
     <ClCompile Include="..\..\Source\SLAPPresetManager.cpp"/>
@@ -1992,6 +1993,7 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPVuMeter.h"/>
     <ClInclude Include="..\..\Source\SLAPParameterComboBox.h"/>
     <ClInclude Include="..\..\Source\SLAPParameterSlider.h"/>
     <ClInclude Include="..\..\Source\SLAPPresetManager.h"/>

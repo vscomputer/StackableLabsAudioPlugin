@@ -5,6 +5,10 @@
               companyName="Stackable Labs">
   <MAINGROUP id="WKt5nv" name="StackableLabsAudioPlugin">
     <GROUP id="{C4ED82EE-6597-0333-26A5-561135B72D14}" name="Source">
+      <GROUP id="{77DDDBF4-B5ED-FFF3-4AF5-CBA6231AB192}" name="Components">
+        <FILE id="PyzkYZ" name="SLAPVuMeter.cpp" compile="1" resource="0" file="Source/SLAPVuMeter.cpp"/>
+        <FILE id="RVGSsz" name="SLAPVuMeter.h" compile="0" resource="0" file="Source/SLAPVuMeter.h"/>
+      </GROUP>
       <GROUP id="{056DBBEB-2F38-3B76-6AA6-84EEDD515289}" name="Parameter Control">
         <FILE id="lfVAB6" name="SLAPParameterComboBox.cpp" compile="1" resource="0"
               file="Source/SLAPParameterComboBox.cpp"/>

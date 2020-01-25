@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="StackableLabsAudioPlugin\Source\Components">
+      <UniqueIdentifier>{A8B98373-120B-A1FD-113C-50FFDBF5C600}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StackableLabsAudioPlugin\Source\Parameter Control">
       <UniqueIdentifier>{88C9861A-345F-95DF-CCFA-B805ADAA4105}</UniqueIdentifier>
     </Filter>
@@ -451,6 +454,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SLAPVuMeter.cpp">
+      <Filter>StackableLabsAudioPlugin\Source\Components</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SLAPParameterComboBox.cpp">
       <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClCompile>
@@ -2490,6 +2496,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SLAPVuMeter.h">
+      <Filter>StackableLabsAudioPlugin\Source\Components</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\SLAPParameterComboBox.h">
       <Filter>StackableLabsAudioPlugin\Source\Parameter Control</Filter>
     </ClInclude>
