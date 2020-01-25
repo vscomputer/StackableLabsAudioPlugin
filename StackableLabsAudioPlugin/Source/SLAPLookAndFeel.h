@@ -46,11 +46,15 @@ public:
 
 		if(shouldDrawButtonAsDown)
 		{
-			fillColor = SLAPColour_5;
+			fillColor = SLAPColour_6;
 		}
 		else if(shouldDrawButtonAsHighlighted)
 		{
 			fillColor = SLAPColour_3;
+		}
+		else
+		{
+			fillColor = SLAPColour_5;
 		}
 
 		const float cornerSize = 6.0f;

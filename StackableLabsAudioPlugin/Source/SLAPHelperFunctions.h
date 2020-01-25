@@ -10,6 +10,7 @@
 
 #pragma once
 #include "JuceHeader.h"
+#include "SLAPInterfaceDefines.h"
 
 inline void paintComponentLabel(Graphics& g, Component* inComponent)
 {
@@ -22,6 +23,10 @@ inline void paintComponentLabel(Graphics& g, Component* inComponent)
 
 	const float cornerSize = 3.0f;
 
-	g.setColour(Colours::darkgrey);
+	g.setColour(SLAPColour_3);
+	g.fillRoundedRectangle(x, y, w, h, cornerSize);
+
+	g.setColour(SLAPColour_1);
+	g.setFont(font_1);
 	g.drawFittedText(label, x, y, w, h, Justification::centred, 1);
 }
