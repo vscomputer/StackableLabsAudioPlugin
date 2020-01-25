@@ -38,7 +38,7 @@ StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
 {
 	//initializeParameters();
 	initializeDSP();
-	_presetManager = new SLAPPresetManager(this);
+	_presetManager = std::make_unique<SLAPPresetManager>(this);
 }
 
 StackableLabsAudioPluginAudioProcessor::~StackableLabsAudioPluginAudioProcessor()

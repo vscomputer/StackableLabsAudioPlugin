@@ -65,7 +65,7 @@ public:
 	AudioProcessorValueTreeState parameters;
 	SLAPPresetManager* getPresetManager()
 	{
-		return  _presetManager;
+		return _presetManager.get();
 	}
 
 private:
@@ -75,7 +75,8 @@ private:
 	ScopedPointer < SLAPGain > _outputGain[2];
 	ScopedPointer<SLAPDelay> _delay[2];
 	ScopedPointer<SLAPLfo> _lfo[2];
-	ScopedPointer<SLAPPresetManager> _presetManager;
+	//ScopedPointer<SLAPPresetManager> _presetManager;
+	std::unique_ptr<SLAPPresetManager> _presetManager;
 
 	//std::unique_ptr<SLAPGain> _inputGain[2];
     //==============================================================================
