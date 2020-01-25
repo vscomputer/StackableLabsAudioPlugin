@@ -39,34 +39,33 @@ SLAPPresetManager::~SLAPPresetManager()
 
 void SLAPPresetManager::getXmlForPreset(XmlElement* inElement)
 {
-	const int numParameters = _processor->getNumParameters();
-
-	for (int i = 0; i < numParameters; i++)
+	auto& parameters = _processor->getParameters();
+	for (int i = 0; i < parameters.size(); i++)
 	{
-		inElement->setAttribute(_processor->getParameterName(i), _processor->getParameter(i));
+		AudioProcessorParameterWithID* parameter = (AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+		inElement->setAttribute(parameter->paramID, parameter->getValue());
 	}
 }
 
 void SLAPPresetManager::loadPresetForXml(XmlElement* inElement)
 {
 	_currentPresetXml = inElement;
-
-	const int numParameters = _processor->getNumParameters();
+	auto& parameters = _processor->getParameters();
 
 	for (int i = 0; i < _currentPresetXml->getNumAttributes(); i++)
 	{
-		const String name = _currentPresetXml->getAttributeName(i);
-		const float value = _currentPresetXml->getDoubleAttribute(name);
+		const String paramId = _currentPresetXml->getAttributeName(i);
+		const float value = _currentPresetXml->getDoubleAttribute(paramId);
 
-		for (int j = 0; j < _processor->getNumParameters(); j++)
+		for (int j = 0; j < parameters.size(); j++)
 		{
-			if(_processor->getParameterName(j) == name)
+			AudioProcessorParameterWithID* parameter = (AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+			if(paramId == parameter->paramID)
 			{
-				_processor->setParameter(j, value);
+				parameter->setValueNotifyingHost(value);
 			}
-		}		
+		}
 	}
-
 }
 
 int SLAPPresetManager::getNumberOfPresets()
@@ -81,15 +80,14 @@ String SLAPPresetManager::getPresetName(int inPresetIndex)
 
 void SLAPPresetManager::createNewPreset()
 {
-	const int numParameters = _processor->getNumParameters();
+	auto& parameters = _processor->getParameters();
 
-	for (int i = 0; i < numParameters; i++)
+	for (int i = 0; i < parameters.size(); i++)
 	{
-		_processor->setParameterNotifyingHost(i, _processor->getParameterDefaultValue(i));
+		AudioProcessorParameterWithID* parameter = (AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+		const float defaultValue = parameter->getDefaultValue();
+		parameter->setValueNotifyingHost(defaultValue);
 	}
-
-	_currentPresetIsSaved = false;
-	_currentPresetName = "Untitled";
 }
 
 void SLAPPresetManager::savePreset()
