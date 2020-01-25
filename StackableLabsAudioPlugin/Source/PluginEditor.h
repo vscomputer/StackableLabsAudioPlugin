@@ -37,5 +37,7 @@ private:
 	ScopedPointer<SLAPMainPanel> _mainPanel;
 	ScopedPointer<SLAPLookAndFeel> _lookAndFeel;
 
+	Image _backgroundImage;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessorEditor)
 };

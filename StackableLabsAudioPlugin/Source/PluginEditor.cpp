@@ -26,7 +26,7 @@ StackableLabsAudioPluginAudioProcessorEditor::StackableLabsAudioPluginAudioProce
 	
 	addAndMakeVisible(_mainPanel);
 
-	
+	_backgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
 }
 
 StackableLabsAudioPluginAudioProcessorEditor::~StackableLabsAudioPluginAudioProcessorEditor()
@@ -39,11 +39,7 @@ StackableLabsAudioPluginAudioProcessorEditor::~StackableLabsAudioPluginAudioProc
 void StackableLabsAudioPluginAudioProcessorEditor::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
-
-    g.setColour (Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
+	g.drawImage(_backgroundImage, getLocalBounds().toFloat());
 }
 
 void StackableLabsAudioPluginAudioProcessorEditor::resized()

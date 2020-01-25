@@ -21,9 +21,5 @@ SLAPPanelBase::~SLAPPanelBase()
 
 void SLAPPanelBase::paint(Graphics& g)
 {
-	g.setColour(Colours::grey);
-	g.fillAll();
-
-	g.setColour(Colours::black);	
-	g.drawRoundedRectangle(0, 0, getWidth(), getHeight(), 4, 2);
+	//this is a place you can do per-panel drawing routines
 }
