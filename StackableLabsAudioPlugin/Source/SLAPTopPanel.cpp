@@ -59,7 +59,13 @@ SLAPTopPanel::~SLAPTopPanel()
 void SLAPTopPanel::paint(Graphics& g)
 {
 	SLAPPanelBase::paint(g);
-	g.drawFittedText("Stackable Labs Audio Plugin", 0, 0, getWidth() - 10, getHeight(), Justification::centredRight, 1);
+
+	g.setColour(SLAPColour_1);
+	g.setFont(font_2);
+
+	const int label_w = 220;
+
+	g.drawFittedText("STACKABLE LABS DELAY/CHORUS", TOP_PANEL_WIDTH - (label_w + 20), 0, label_w, getHeight(), Justification::centredRight, 1);
 }
 
 void SLAPTopPanel::buttonClicked(Button* b)
