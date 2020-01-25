@@ -18,6 +18,8 @@ class SLAPLookAndFeel
 public:
 	SLAPLookAndFeel()
 	{
+		_sliderImage = ImageCache::getFromMemory(BinaryData::kadenze_knob_png, BinaryData::kadenze_knob_pngSize);
+
 		setColour(ComboBox::backgroundColourId, SLAPColour_3);
 		setColour(ComboBox::outlineColourId, SLAPColour_2);
 		setColour(ComboBox::arrowColourId, SLAPColour_1);
@@ -103,5 +105,21 @@ public:
 		g.setColour(arrowColour);
 		g.strokePath(path, PathStrokeType(2.0f));
 	}
+
+	void drawRotarySlider(Graphics& g, int x, int y, int width, int height, float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle, Slider&) override
+	{
+		const int numFrames = _sliderImage.getHeight() / _sliderImage.getWidth();
+		const int frameIndex = (int)std::ceil(sliderPosProportional * (numFrames - 1));
+
+		const float radius = jmin(width * 0.5f, height * 0.5f);
+		const float centerX = x + (width * 0.5f);
+		const float centerY = y + (height * 0.5f);
+		const float rX = centerX - radius;
+		const float rY = centerY - radius;
+
+		g.drawImage(_sliderImage, rX, rY, radius * 2, radius * 2, 0, frameIndex * _sliderImage.getWidth(), _sliderImage.getWidth(), _sliderImage.getWidth());
+	}
+
 private:
+	Image _sliderImage;
 };
