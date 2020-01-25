@@ -64,15 +64,14 @@ void SLAPVuMeter::timerCallback()
 	{
 	case(kParameter_InputGain):
 		{
-		updatedCh0Level = 0.75f;
-		updatedCh1Level = 0.75f;
+			updatedCh0Level = _processor->getInputGainMeterLevel(0);
+			updatedCh1Level = _processor->getInputGainMeterLevel(1);
 		}
 		break;
 	case(kParameter_OutputGain):
 		{
-		updatedCh0Level = 0.35f;
-		updatedCh1Level = 0.35f;
-			
+			updatedCh0Level = _processor->getOutputGainMeterLevel(0);
+			updatedCh1Level = _processor->getOutputGainMeterLevel(1);			
 		}
 		break;
 	}

@@ -16,5 +16,8 @@ public:
 	SLAPGain();
 	~SLAPGain();
 	void process(float* inAudio, float inGain, float* outAudio, int numSamplesToRender);
+	float getMeterLevel();
 private:
+	float _outputSmoothed;
+	
 };

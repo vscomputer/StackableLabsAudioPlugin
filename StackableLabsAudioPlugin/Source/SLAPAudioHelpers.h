@@ -39,6 +39,13 @@ inline float slap_denormalize(float inValue)
 	}
 }
 
+inline float dbToNormalizedGain(float inValue)
+{
+	float inValueDb = Decibels::gainToDecibels(inValue + 0.00001f);
+	inValueDb = (inValueDb + 96.0f) / 96.0f;
+	return inValueDb;
+}
+
 inline double tanh_clip(double x)
 {
 	return x * (27 + x * x) / (27 + 9 * x * x);

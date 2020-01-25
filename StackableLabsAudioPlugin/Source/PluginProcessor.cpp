@@ -223,6 +223,18 @@ void StackableLabsAudioPluginAudioProcessor::setStateInformation (const void* da
 	else { jassertfalse; }
 }
 
+float StackableLabsAudioPluginAudioProcessor::getInputGainMeterLevel(int inChannel)
+{
+	const float normalizedDb = dbToNormalizedGain(_inputGain[inChannel]->getMeterLevel());
+	return normalizedDb;
+}
+
+float StackableLabsAudioPluginAudioProcessor::getOutputGainMeterLevel(int inChannel)
+{
+	const float normalizedDb = dbToNormalizedGain(_outputGain[inChannel]->getMeterLevel());
+	return normalizedDb;
+}
+
 void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 {
 	for (int i = 0; i < 2; i++)

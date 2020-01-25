@@ -9,9 +9,10 @@
 */
 
 #include "SLAPGain.h"
-#include "JuceHeader.h"
+#include "SLAPAudioHelpers.h"
 
 SLAPGain::SLAPGain()
+	: _outputSmoothed(0)
 {
 	
 }
@@ -29,4 +30,12 @@ void SLAPGain::process(float* inAudio, float inGain, float* outAudio, int numSam
 	{
 		outAudio[i] = inAudio[i] * gainMapped;
 	}
+
+	float absValue = fabs(outAudio[0]);
+	_outputSmoothed = slMeterSmoothingCoeff * (_outputSmoothed - absValue) + absValue;
+}
+
+float SLAPGain::getMeterLevel()
+{
+	return _outputSmoothed;
 }
