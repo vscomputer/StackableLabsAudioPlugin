@@ -12,6 +12,16 @@
 #include "PluginEditor.h"
 #include "SLAPParameters.h"
 
+AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+{
+	std::vector<std::unique_ptr<AudioParameterFloat>> params;
+
+	for (int i = 0; i < kParameter_TotalNumParameters; i++)
+		params.push_back(std::make_unique<AudioParameterFloat>(SLAPParameterId[i], SLAPParameterLabel[i], NormalisableRange<float>(0.0f,1.0f), 0.5f));
+
+	return { params.begin(), params.end() };
+}
+
 //==============================================================================
 StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -23,10 +33,10 @@ StackableLabsAudioPluginAudioProcessor::StackableLabsAudioPluginAudioProcessor()
 		.withOutput("Output", AudioChannelSet::stereo(), true)
 #endif
 	),
-	parameters(*this, nullptr)
+	parameters(*this, nullptr, juce::Identifier("SLAP"), createParameterLayout())
 #endif
 {
-	initializeParameters();
+	//initializeParameters();
 	initializeDSP();
 	_presetManager = new SLAPPresetManager(this);
 }
@@ -170,11 +180,20 @@ void StackableLabsAudioPluginAudioProcessor::processBlock (AudioBuffer<float>& b
     {
 		// ..do something to the data...
         auto* channelData = buffer.getWritePointer (channel);
-		_inputGain[channel]->process(channelData, getParameter(kParameter_InputGain), channelData, buffer.getNumSamples());
-		float rate = (channel == 0) ? getParameter(kParameter_ModulationRate) : 0;
-		_lfo[channel]->process(rate, getParameter(kParameter_ModulationDepth), buffer.getNumSamples());
-		_delay[channel]->process(channelData, getParameter(kParameter_DelayTime), getParameter(kParameter_DelayFeedback), getParameter(kParameter_DelayWetDry), getParameter(kParameter_DelayType), _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
-		_outputGain[channel]->process(channelData, getParameter(kParameter_OutputGain), channelData, buffer.getNumSamples());
+		float inputGain = *parameters.getRawParameterValue(SLAPParameterId[kParameter_InputGain]);
+		float modRate = *parameters.getRawParameterValue(SLAPParameterId[kParameter_ModulationRate]);
+		float modDepth = *parameters.getRawParameterValue(SLAPParameterId[kParameter_ModulationDepth]);
+		float delayTime = *parameters.getRawParameterValue(SLAPParameterId[kParameter_DelayTime]);
+		float feedback = *parameters.getRawParameterValue(SLAPParameterId[kParameter_DelayFeedback]);
+		float wetDry = *parameters.getRawParameterValue(SLAPParameterId[kParameter_DelayWetDry]);
+		float delayType = *parameters.getRawParameterValue(SLAPParameterId[kParameter_DelayType]);
+		float outputGain = *parameters.getRawParameterValue(SLAPParameterId[kParameter_OutputGain]);
+
+		_inputGain[channel]->process(channelData, inputGain, channelData, buffer.getNumSamples());
+		float rate = (channel == 0) ? modRate: 0;
+		_lfo[channel]->process(rate, modDepth, buffer.getNumSamples());
+		_delay[channel]->process(channelData, delayTime, feedback, wetDry, delayType, _lfo[channel]->getBuffer(), channelData, buffer.getNumSamples());
+		_outputGain[channel]->process(channelData, outputGain, channelData, buffer.getNumSamples());
 		
     }
 }
