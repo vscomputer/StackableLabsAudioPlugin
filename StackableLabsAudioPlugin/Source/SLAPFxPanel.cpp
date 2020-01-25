@@ -99,16 +99,16 @@ void SLAPFxPanel::setFxPanelStyle(SLAPFxPanelStyle inStyle)
 void SLAPFxPanel::paint(Graphics& g)
 {
 	SLAPPanelBase::paint(g);
-
+	String label;
 	switch (_style) {
 		case kSLAPFxPanelStyle_Delay:
 		{
-			g.drawFittedText("DELAY", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
+			label = "DELAY";
 		}
 		break;
 		case kSLAPFxPanelStyle_Chorus:
 		{
-			g.drawFittedText("CHORUS", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
+			label = "CHORUS";			
 		}
 		break;
 		case kSLAPFxPanelStyle_TotalNumStyles:
@@ -121,6 +121,12 @@ void SLAPFxPanel::paint(Graphics& g)
 			jassertfalse;
 		};
 	}
+
+	
+	g.setColour(SLAPColour_5);
+	g.setFont(font_3);
+
+	g.drawText(label, 0, 0, getWidth(), 80, Justification::centred);
 
 	for (int i = 0; i < _sliders.size(); i++)
 	{
