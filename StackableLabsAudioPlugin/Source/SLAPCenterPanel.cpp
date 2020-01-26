@@ -15,15 +15,15 @@ SLAPCenterPanel::SLAPCenterPanel(StackableLabsAudioPluginAudioProcessor* inProce
 {
 	setSize(CENTER_PANEL_WIDTH, CENTER_PANEL_HEIGHT);
 
-	_menuBar = new SLAPCenterPanelMenuBar(inProcessor);
+	_menuBar = std::make_unique<SLAPCenterPanelMenuBar>(inProcessor);
 	_menuBar->setTopLeftPosition(0, 0);
-	addAndMakeVisible(_menuBar);
+	addAndMakeVisible(_menuBar.get());
 
-	_fxPanel = new SLAPFxPanel(inProcessor);
+	_fxPanel = std::make_unique <SLAPFxPanel>(inProcessor);
 	_fxPanel->setTopLeftPosition(0, CENTER_PANEL_MENU_BAR_HEIGHT);
-	addAndMakeVisible(_fxPanel);
+	addAndMakeVisible(_fxPanel.get());
 
-	_menuBar->addFxTypeComboBoxListener(_fxPanel);
+	_menuBar->addFxTypeComboBoxListener(_fxPanel.get());
 }
 
 SLAPCenterPanel::~SLAPCenterPanel()

@@ -20,6 +20,6 @@ public:
 	SLAPCenterPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPCenterPanel();
 private:
-	ScopedPointer<SLAPCenterPanelMenuBar> _menuBar;
-	ScopedPointer<SLAPFxPanel> _fxPanel;
+	std::unique_ptr<SLAPCenterPanelMenuBar> _menuBar;
+	std::unique_ptr<SLAPFxPanel> _fxPanel;
 };
