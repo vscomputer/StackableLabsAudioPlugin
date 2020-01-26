@@ -18,7 +18,6 @@ public:
 	SLAPParameterSlider(AudioProcessorValueTreeState& stateToControl, const String& parameterId, const String& parameterLabel);
 	~SLAPParameterSlider();
 private:
-	ScopedPointer<AudioProcessorValueTreeState::SliderAttachment> _attachment;
-
+	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> _attachment;	
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SLAPParameterSlider);
 };
