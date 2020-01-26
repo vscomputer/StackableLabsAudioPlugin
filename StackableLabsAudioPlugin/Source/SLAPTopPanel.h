@@ -25,9 +25,10 @@ public:
 private:
 	void displaySaveAsPopup();
 	void updatePresetComboBox();
-
-	ScopedPointer<ComboBox> _presetDisplay;
-	ScopedPointer<TextButton> _newPreset;
-	ScopedPointer<TextButton> _savePreset;
-	ScopedPointer<TextButton> _saveAsPreset;
+	
+	std::unique_ptr<ComboBox> _presetDisplay;
+	std::unique_ptr<TextButton> _newPreset;
+	std::unique_ptr<TextButton> _savePreset;
+	std::unique_ptr<TextButton> _saveAsPreset;
+	
 };
