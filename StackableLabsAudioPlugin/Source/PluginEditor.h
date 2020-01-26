@@ -34,9 +34,9 @@ private:
     StackableLabsAudioPluginAudioProcessor& processor;
 
 	//UI elements
-	ScopedPointer<SLAPMainPanel> _mainPanel;
-	ScopedPointer<SLAPLookAndFeel> _lookAndFeel;
-
+	std::unique_ptr<SLAPMainPanel> _mainPanel;
+	std::unique_ptr<SLAPLookAndFeel> _lookAndFeel;
+	
 	Image _backgroundImage;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StackableLabsAudioPluginAudioProcessorEditor)
