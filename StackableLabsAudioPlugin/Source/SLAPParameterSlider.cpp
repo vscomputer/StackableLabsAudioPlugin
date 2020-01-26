@@ -16,7 +16,7 @@ SLAPParameterSlider::SLAPParameterSlider(AudioProcessorValueTreeState& stateToCo
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setTextBoxStyle(Slider::TextEntryBoxPosition::TextBoxBelow, false, 0, 0);
 	setRange(0.0f, 1.0f, 0.001f);
-	_attachment = new AudioProcessorValueTreeState::SliderAttachment(stateToControl, parameterId, *this);
+	_attachment = std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(stateToControl, parameterId, *this);
 }
 
 SLAPParameterSlider::~SLAPParameterSlider()

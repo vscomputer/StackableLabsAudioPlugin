@@ -13,7 +13,7 @@
 SLAPParameterComboBox::SLAPParameterComboBox(AudioProcessorValueTreeState& stateToControl, const String& parameterId)
 	: juce::ComboBox(parameterId)
 {
-	_attachment = new AudioProcessorValueTreeState::ComboBoxAttachment(stateToControl, parameterId, *this);
+	_attachment = std::make_unique<AudioProcessorValueTreeState::ComboBoxAttachment>(stateToControl, parameterId, *this);
 }
 
 SLAPParameterComboBox::~SLAPParameterComboBox()

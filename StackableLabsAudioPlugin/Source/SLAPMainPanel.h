@@ -21,8 +21,8 @@ public:
 	SLAPMainPanel(StackableLabsAudioPluginAudioProcessor* inProcessor);
 	~SLAPMainPanel();
 private:
-	ScopedPointer<SLAPTopPanel> _topPanel;
-	ScopedPointer<SLAPGainPanel> _inputGainPanel;
-	ScopedPointer<SLAPGainPanel> _outputGainPanel;
-	ScopedPointer<SLAPCenterPanel> _centerPanel;
+	std::unique_ptr<SLAPTopPanel> _topPanel;
+	std::unique_ptr<SLAPGainPanel> _inputGainPanel;
+	std::unique_ptr<SLAPGainPanel> _outputGainPanel;
+	std::unique_ptr<SLAPCenterPanel> _centerPanel;	
 };

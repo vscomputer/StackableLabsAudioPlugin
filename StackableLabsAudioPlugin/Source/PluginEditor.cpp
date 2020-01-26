@@ -17,14 +17,14 @@ StackableLabsAudioPluginAudioProcessorEditor::StackableLabsAudioPluginAudioProce
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-	_lookAndFeel = new SLAPLookAndFeel();
-	setLookAndFeel(_lookAndFeel);
-	LookAndFeel::setDefaultLookAndFeel(_lookAndFeel);
+	_lookAndFeel = std::make_unique<SLAPLookAndFeel>();
+	setLookAndFeel(_lookAndFeel.get());
+	LookAndFeel::setDefaultLookAndFeel(_lookAndFeel.get());
 	
 	setSize (MAIN_PANEL_WIDTH, MAIN_PANEL_HEIGHT);
-	_mainPanel = new SLAPMainPanel(&processor);
+	_mainPanel = std::make_unique<SLAPMainPanel>(&processor);
 	
-	addAndMakeVisible(_mainPanel);
+	addAndMakeVisible(_mainPanel.get());
 
 	_backgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
 }

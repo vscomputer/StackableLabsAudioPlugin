@@ -22,5 +22,5 @@ public:
 	void addFxTypeComboBoxListener(ComboBox::Listener* inListener);
 	void removeFxTypeComboBoxListener(ComboBox::Listener* inListener);
 private:
-	ScopedPointer<SLAPParameterComboBox> _fxTypeComboBox;
+	std::unique_ptr<SLAPParameterComboBox> _fxTypeComboBox;
 };

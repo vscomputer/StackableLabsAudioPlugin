@@ -19,7 +19,8 @@ SLAPCenterPanel::SLAPCenterPanel(StackableLabsAudioPluginAudioProcessor* inProce
 	_menuBar->setTopLeftPosition(0, 0);
 	addAndMakeVisible(_menuBar.get());
 
-	_fxPanel = std::make_unique <SLAPFxPanel>(inProcessor);
+	_fxPanel = std::make_unique<SLAPFxPanel>(inProcessor);
+
 	_fxPanel->setTopLeftPosition(0, CENTER_PANEL_MENU_BAR_HEIGHT);
 	addAndMakeVisible(_fxPanel.get());
 

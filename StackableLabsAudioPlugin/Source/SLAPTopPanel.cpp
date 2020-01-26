@@ -20,34 +20,34 @@ SLAPTopPanel::SLAPTopPanel(StackableLabsAudioPluginAudioProcessor* inProcessor)
 	int button_w = 55;
 	int button_h = 25;
 
-	_newPreset = new TextButton();
+	_newPreset = std::make_unique<TextButton>();
 	_newPreset->setButtonText("NEW");
 	_newPreset->setBounds(button_x, button_y, button_w, button_h);
 	_newPreset->addListener(this);
-	addAndMakeVisible(_newPreset);
+	addAndMakeVisible(_newPreset.get());
 	button_x = button_x + button_w;
 
-	_savePreset = new TextButton();
+	_savePreset = std::make_unique<TextButton>();
 	_savePreset->setButtonText("SAVE");
 	_savePreset->setBounds(button_x, button_y, button_w, button_h);
 	_savePreset->addListener(this);
-	addAndMakeVisible(_savePreset);
+	addAndMakeVisible(_savePreset.get());
 	button_x = button_x + button_w;
 
-	_saveAsPreset = new TextButton();
+	_saveAsPreset = std::make_unique<TextButton>();
 	_saveAsPreset->setButtonText("SAVE AS");
 	_saveAsPreset->setBounds(button_x, button_y, button_w, button_h);
 	_saveAsPreset->addListener(this);
-	addAndMakeVisible(_saveAsPreset);
+	addAndMakeVisible(_saveAsPreset.get());
 	button_x = button_x + button_w;
 
 	const int comboBox_w = 200;
 	const int comboBox_x = TOP_PANEL_WIDTH * 0.5 - comboBox_w * 0.5;
 
-	_presetDisplay = new ComboBox();
+	_presetDisplay = std::make_unique<ComboBox>();
 	_presetDisplay->setBounds(comboBox_x, button_y, comboBox_w, button_h);
 	_presetDisplay->addListener(this);
-	addAndMakeVisible(_presetDisplay);
+	addAndMakeVisible(_presetDisplay.get());
 
 	updatePresetComboBox();
 }
@@ -71,16 +71,16 @@ void SLAPTopPanel::paint(Graphics& g)
 void SLAPTopPanel::buttonClicked(Button* b)
 {
 	SLAPPresetManager* presetManager = _processor->getPresetManager();
-	if(b == _newPreset)
+	if(b == _newPreset.get())
 	{
 		presetManager->createNewPreset();
 		updatePresetComboBox();
 	}
-	else if(b == _savePreset)
+	else if(b == _savePreset.get())
 	{
 		presetManager->savePreset();
 	}
-	else if(b == _saveAsPreset)
+	else if(b == _saveAsPreset.get())
 	{
 		displaySaveAsPopup();
 	}
@@ -89,7 +89,7 @@ void SLAPTopPanel::buttonClicked(Button* b)
 void SLAPTopPanel::comboBoxChanged(ComboBox* comboBoxThatHasChanged)
 {
 	SLAPPresetManager* presetManager = _processor->getPresetManager();
-	if(comboBoxThatHasChanged == _presetDisplay)
+	if(comboBoxThatHasChanged == _presetDisplay.get())
 	{
 		const int index = _presetDisplay->getSelectedItemIndex();
 		presetManager->loadPreset(index);
