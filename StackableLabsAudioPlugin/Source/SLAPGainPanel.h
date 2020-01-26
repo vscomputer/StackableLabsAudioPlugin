@@ -22,6 +22,6 @@ public:
 	void setParameterId(int inParameterId);
 	void paint(Graphics& g) override;
 private:
-	ScopedPointer<SLAPParameterSlider> _slider;
-	ScopedPointer<SLAPVuMeter> _vuMeter;
+	std::unique_ptr<SLAPParameterSlider> _slider;
+	std::unique_ptr<SLAPVuMeter> _vuMeter;
 };
