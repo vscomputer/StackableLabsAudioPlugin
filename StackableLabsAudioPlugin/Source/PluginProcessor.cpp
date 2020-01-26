@@ -258,10 +258,10 @@ void StackableLabsAudioPluginAudioProcessor::initializeDSP()
 {
 	for (int i = 0; i < 2; i++)
 	{
-		_inputGain[i] = new SLAPGain();
-		_outputGain[i] = new SLAPGain();
-		_delay[i] = new SLAPDelay();
-		_lfo[i] = new SLAPLfo();
+		_inputGain[i] = std::make_unique<SLAPGain>();
+		_outputGain[i] = std::make_unique<SLAPGain>();
+		_delay[i] = std::make_unique<SLAPDelay>();
+		_lfo[i] = std::make_unique<SLAPLfo>();
 	}
 }
 
