@@ -71,7 +71,8 @@ public:
 private:
 	void initializeDSP();
 	void initializeParameters();
-	std::unique_ptr <SLAPGain> _inputGain[2];
+
+	std::unique_ptr<SLAPGain> _inputGain[2];
 	std::unique_ptr<SLAPGain> _outputGain[2];
 	std::unique_ptr<SLAPDelay> _delay[2];
 	std::unique_ptr<SLAPLfo> _lfo[2];
